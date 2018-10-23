@@ -1,6 +1,14 @@
-#contenedor {
-  background: url('/assets/home.jpg') no-repeat center center;
-  height: 740px;
+@media only screen and (max-width: 1920px) {
+  .contain-image {
+    background: url('/assets/home.jpg') no-repeat;
+    height: 950px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .contain-image {
+    background: url('/assets/home.jpg') no-repeat;
+    height: 740px;
+  }
 }
 .padding-content {
   padding: 100px 20px;
