@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Ikegraf</span>
+    <span class="spacer"></span>
+    <div *ngFor="let m of menu">
+      <button mat-button>{{m}}</button>
+    </div>
+    <span class="spacer"></span>
+    <mat-icon class="space-icon">favorite</mat-icon>
+    <mat-icon class="space-icon">edit</mat-icon>
+    <mat-icon class="space-icon">delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
