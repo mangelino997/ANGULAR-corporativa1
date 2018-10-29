@@ -28,3 +28,10 @@
 .mat-card {
   position: unset;
 }
+.mat-card:hover {
+  transform: scale(1.05);
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888;
+}
+
