@@ -29,9 +29,10 @@
   position: unset;
 }
 .mat-card:hover {
-  transform: scale(1.05);
+  /*transform: scale(1.05);
   border: 1px solid;
   padding: 10px;
-  box-shadow: 5px 10px 8px #888888;
+  box-shadow: 5px 10px 8px #888888; */
+  box-shadow:0 6px 59px rgba(0, 0, 0, 0.08);
 }
 

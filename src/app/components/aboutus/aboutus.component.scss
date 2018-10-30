@@ -1,7 +1,7 @@
 #content {
   //background-color: #E5E1DD;
   background-color: #FFF;
-  height: 740px;
+  height: auto;
   padding-top: 80px;
 }
 .section-title {
@@ -22,4 +22,11 @@ li {
   background-color: #00BCD4;
   border-style: unset;
   width: 40%;
+  
+}
+.info {
+  margin: 0px 30px 30px 30px;
+}
+p {
+  margin: 2px;
 }
