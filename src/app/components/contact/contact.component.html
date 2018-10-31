@@ -1,6 +1,6 @@
-<div class="contactbackground">
+<div class="contactbackground" (mouseenter)="animateMe()" (mouseleave)="animateMe()">
   <div fxLayout="row" class="contact-icon" fxLayoutAlign="center center">
-    <div fxFlex="20" class="fadeInLeft">
+    <div fxFlex="20" [@ubicacionAnimation]='state'>
       <img src="assets/ubicacion-logo.png" >
       <div >
         <h2>Ubicación</h2>
@@ -48,5 +48,4 @@
     </div>
     <div fxFlex="50"></div>
   </div>
-
 </div>
