@@ -1,0 +1,9 @@
+
+  .doctor {
+    display: flex;
+    align-items: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 1rem;
+    align-self: flex-end;
+  }

@@ -1,6 +1,6 @@
 <div class="contactbackground" (mouseenter)="animateMe()" (mouseleave)="animateMe()">
   <div fxLayout="row" class="contact-icon" fxLayoutAlign="center center">
-    <div fxFlex="20" [@ubicacionAnimation]='state'>
+    <div fxFlex="20" class="animated fadeInLeft" >
       <img src="assets/ubicacion-logo.png" >
       <div >
         <h2>Ubicación</h2>
@@ -8,7 +8,7 @@
         <p>Centro Villa Carlos Paz</p>
       </div>
     </div>
-    <div fxFlex="20"  class="Contactos">
+    <div fxFlex="20"  class="animated zoomIn">
       <img src="assets/contacto-logo.png">
       <div >
         <h2>Contactos</h2>
@@ -17,7 +17,7 @@
         <p>Correo electrónico:</p>
       </div>
     </div>
-    <div fxFlex="20"  class="Redes">
+    <div fxFlex="20"  class="animated fadeInRight">
       <img src="assets/social-logo.png">
       <div >
         <h2>Redes</h2>
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row">
+  <div fxLayout="row" >
     <div fxFlex="50" fxLayoutAlign="left">
       <mat-card class="example-card">
     <form [formGroup]="form">
@@ -46,6 +46,48 @@
       </form>
       </mat-card>
     </div>
-    <div fxFlex="50"></div>
+    <div fxFlex="50" class="contact-form">
+      <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              
+              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">26 December 2019</span>
+              <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+              <a href="#" class="blog-slider__button">READ MORE</a>
+            </div>
+          </div>
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/jason-leung-798979-unsplash.jpg" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">26 December 2019</span>
+              <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
+              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+              <a href="#" class="blog-slider__button">READ MORE</a>
+            </div>
+          </div>
+          
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/alessandro-capuzzi-799180-unsplash.jpg" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">26 December 2019</span>
+              <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+              <a href="#" class="blog-slider__button">READ MORE</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
+    </div>
   </div>
 </div>
