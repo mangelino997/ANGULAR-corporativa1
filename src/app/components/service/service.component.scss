@@ -1,18 +1,23 @@
 @media only screen and (max-width: 1920px) {
   .contain-image {
-    background: url('/assets/service.jpg') no-repeat;
+    background: url('/assets/write.jpg') no-repeat center top;
     height: 950px;
+    
+
   }
 }
 @media only screen and (max-width: 1366px) {
   .contain-image {
-    background: url('/assets/service.jpg') no-repeat;
+    background: url('/assets/write.jpg') no-repeat center top;
     height: 740px;
   }
 }
+
 .container-title {
-  padding: 20px;
-  background-color: rgba(63, 191, 189, 0.40);
+//   padding: 20px;
+//   background-color: rgba(63, 191, 189, 0.40);
+  text-align: center;
+  color: #FFF;
 }
 .container {
   padding: 60px;
@@ -27,12 +32,19 @@
 }
 .mat-card {
   position: unset;
+  text-align: center;
 }
-.mat-card:hover {
+.mat-card:hover 
+{
   /*transform: scale(1.05);
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 8px #888888; */
   box-shadow:0 6px 59px rgba(0, 0, 0, 0.08);
 }
-
+.mat-card-title {
+  font-size: 28px;
+}
+.text-center {
+  font-size: 18px;
+}

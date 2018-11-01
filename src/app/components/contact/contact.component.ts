@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import {Swiper} from 'swiper/dist/js/swiper.js';
@@ -23,7 +23,7 @@ import {Swiper} from 'swiper/dist/js/swiper.js';
     ])
   ]
 })
-export class ContactComponent implements OnInit, AfterViewInit {
+export class ContactComponent implements OnInit {
 
   public form: FormGroup;
   private anchorsSwiper: any;
@@ -31,21 +31,6 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngAfterViewInit() {
-    var swiper = new Swiper('.blog-slider', {
-      spaceBetween: 30,
-      effect: 'fade',
-      loop: true,
-      mousewheel: {
-        invert: false,
-      },
-      // autoHeight: true,
-      pagination: {
-        el: '.blog-slider__pagination',
-        clickable: true,
-      }
-    });
-  }
 
   ngOnInit() {
     this.form= new FormGroup({
