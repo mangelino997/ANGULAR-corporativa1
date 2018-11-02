@@ -1,15 +1,16 @@
 @media only screen and (max-width: 1920px) {
   .contain-image {
     background: url('/assets/write.jpg') no-repeat center top;
-    height: 950px;
-    
+    // height: 950px;
+    height: auto;
 
   }
 }
 @media only screen and (max-width: 1366px) {
   .contain-image {
     background: url('/assets/write.jpg') no-repeat center top;
-    height: 740px;
+    // height: 740px;
+    height: auto;
   }
 }
 
@@ -47,4 +48,14 @@
 }
 .text-center {
   font-size: 18px;
+}
+// responsive
+.container-title-responsive {
+  text-align: center;
+  color: #000000;
+}
+.title-responsive {
+  font-size: 40px;
+  color: #000000;
+  padding: 15px;
 }

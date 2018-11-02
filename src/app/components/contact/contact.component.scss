@@ -18,14 +18,25 @@
 .contact-icon > div > div > p {
   color: black;
 }
+h2 {
+  color: #FFF;
+}
 .contact-divider {
-  background-color: #00BCD4;
+  background-color: #FFF;
   height: 2px;
-  width: 25%;
+  width: 15%;
 }
 span {
-  color: black;
+  color: #FFF;
 }
+// Responsive
+.contact-align-responsive {
+  text-align: center;
+}
+.icons-responsive {
+  padding: 35px;
+}
+
 // Animaciones de entrada
 // Animacion desde la izquierda
  @-webkit-keyframes fadeInLeft {

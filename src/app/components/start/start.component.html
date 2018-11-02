@@ -1,24 +1,22 @@
 <div class="padding-content" fxLayout="row">
-<div class="contain-image">
-    <div class="padding-content-column margin-top-20 start-left" fxLayout="column" fxFlex="35" fxLayoutAlign="center center">
-       
+<div class="contain-image" fxHide.sm fxHide.xs>
+    <div class="padding-content-column margin-top-20 start-left" fxLayout="column" fxFlex="35" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
       <div class="banner-left">
-              <div class="">
-                  <span class="first-title">Nuestros Servicios</span><br>
-              </div>
-              <div class="" fxLayout="row" fxLayoutAlign="center center">
+        <div class="">
+          <span class="first-title">Nuestros Servicios</span><br>
+        </div>
+        <div class="" fxLayout="row" fxLayoutAlign="center center">
                    <!-- <span class="text-center normal-text">Realizamos profesiogramas grafológicos analizando el puesto de trabajo
                       y la relación puesto-candidato. Una vez definido el perfil realizaremos los test y pruebas de
                       escritura para analizar que postulante es el adecuado </span>-->
-                      <div class="button-first" >
-                        <a href="">Definir Perfil Laboral</a>
-                      </div>
-                      <div class="button-second">
-                          <a href="">Orientación Vocacional</a>
-                      </div>
-                    
-              </div>
-            </div>
+          <div class="button-first" >
+            <a href="">Definir Perfil Laboral</a>
+          </div>
+          <div class="button-second">
+              <a href="">Orientación Vocacional</a>
+          </div>   
+        </div>
+      </div>
           
           <!-- <div class="">
               <div class="">
@@ -35,7 +33,7 @@
             </div> -->
       
     </div>
-    <div class="padding-content-column title-animated" fxLayout="column" fxFlex="65" fxLayoutAlign=" center">
+    <div class="padding-content-column title-animated" fxLayout="column" fxFlex="65" fxLayoutAlign=" center" fxHide.sm fxHide.xs>
       <h1 class="first-title"></h1>
       <svg viewBox="0 0 800 600">
         <symbol id="s-text">
@@ -64,4 +62,41 @@
       </svg>
     </div>
   </div>
+  <!-- ----------Start Responsive------ -->
+  <div fxLayout="column" fxLayoutAlign=""  fxHide fxShow.xs class="contain-image-responsive">
+      <div class="title-animated">
+        <svg viewBox="0 0 800 600">
+          <symbol id="s-text">
+            <text text-anchor="middle"
+                  x="50%"
+                  y="35%"
+                  class="text--line"
+                  >
+                  Ikegraf
+            </text>
+            
+          </symbol>
+          
+          <g class="g-ants">
+            <use xlink:href="#s-text"
+              class="text-copy"></use>     
+            <use xlink:href="#s-text"
+              class="text-copy"></use>     
+            <use xlink:href="#s-text"
+              class="text-copy"></use>     
+            <use xlink:href="#s-text"
+              class="text-copy"></use>     
+            <use xlink:href="#s-text"
+              class="text-copy"></use>     
+          </g>
+        </svg>
+      </div>
+      <div fxLayoutAlign="center center">
+          <button mat-raised-button>Definir Perfil Laboral</button>
+      </div><br>
+      <div fxLayoutAlign="center center">
+          <button mat-raised-button color="primary">Orientación Vocacional</button>
+      </div>
+  </div>
+  <!-- -------------------------------- -->
 </div>

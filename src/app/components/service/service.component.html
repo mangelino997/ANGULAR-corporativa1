@@ -1,16 +1,15 @@
-<div class="contain-image">
+<div class="contain-image" fxHide.sm fxHide.xs>
   <br><br>
   <div class="container-title">
-    <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
       <span class="title">Nuestros Servicios</span>
     </div>
   </div>
-  <div class="container">
+  <div class="container" >
     <div fxLayout="row">
-      <div fxFlex="15" fxLayoutAlign="center center">
-
+      <div fxFlex="15" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
       </div>
-      <div fxFlex="35" fxLayoutAlign="center center">
+      <div fxFlex="35"  fxLayoutAlign="center center"  fxHide.sm fxHide.xs>
         <mat-card class="size-card">
           <img mat-card-image src="/assets/sel-personal.jpg" height="350px">
           <mat-card-header fxLayoutAlign="center center">
@@ -32,7 +31,7 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div fxFlex="35" fxLayoutAlign="center center">
+      <div fxFlex="35" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
         <mat-card class="size-card">
           <img mat-card-image src="/assets/ori-vocacional.jpg" height="350px">
           <mat-card-header fxLayoutAlign="center center">
@@ -54,9 +53,63 @@
             </mat-card-content>
         </mat-card>
       </div>
-      <div fxFlex="15" fxLayoutAlign="center center">
-
-      </div>
+      <div fxFlex="15" fxLayoutAlign="center center" fxHide.sm fxHide.xs></div>
     </div>
   </div>
 </div>
+
+<!-- Service Responsive -->
+<div class="">
+  <div fxLayout="column" fxLayoutAlign=" stretch"  fxHide fxShow.xs>
+      <div class="container-title-responsive">
+          <div fxLayout="row" fxLayoutAlign="center center" >
+            <span class="title-responsive">Nuestros Servicios</span>
+          </div>
+      </div>
+      <div>
+          <mat-card class="size-card">
+            <img mat-card-image src="/assets/sel-personal.jpg" height="350px">
+            <mat-card-header fxLayoutAlign="center center">
+                <mat-card-title><b>Selección de Personal</b></mat-card-title>
+              </mat-card-header>
+            <mat-card-content>
+              <p class="text-center">
+                Al definir el perfil laboral desempeñaremos, a través de la escritura y la entrevista,
+                las evaluaciones de personal para identificar aptitudes e intereses y así lograr la productividad
+                del funcionario. También excelente herramienta para la reorganización de una empresa,
+                al ser consciente de los aspectos positivos y negativos de los integrantes.
+              </p>
+              <button mat-fab color="primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+              </button>
+            </mat-card-content>
+          </mat-card>
+      </div>
+      <div >
+          <mat-card class="size-card">
+            <img mat-card-image src="/assets/ori-vocacional.jpg" height="350px">
+            <mat-card-header fxLayoutAlign="center center">
+                <mat-card-title><b>Orientación Vocacional</b></mat-card-title>
+              </mat-card-header>
+            <mat-card-content>
+              <p class="text-center">
+                Realizaremos un conjunto de prácticas destinadas al esclarecimiento de su vocación.
+                Ideal para adolescentes que se encuentran próximos a finalizar sus estudios secundarios
+                pero también a jóvenes en general y hasta adultos insertados laboralmente que evalúan la
+                posibilidad de una nueva formación o capacitación.
+              </p>
+                <button mat-fab color="primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                  </svg>
+                </button>
+              </mat-card-content>
+          </mat-card>
+      </div>
+    </div>
+  </div>
+<!-- ---------------End Responsive----------------- -->
