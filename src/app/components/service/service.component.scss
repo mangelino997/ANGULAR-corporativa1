@@ -3,7 +3,7 @@
     background: url('/assets/write.jpg') no-repeat center top;
     // height: 950px;
     height: auto;
-
+    padding: 60px;
   }
 }
 @media only screen and (max-width: 1366px) {
@@ -11,6 +11,7 @@
     background: url('/assets/write.jpg') no-repeat center top;
     // height: 740px;
     height: auto;
+    padding: 60px;
   }
 }
 
@@ -41,7 +42,9 @@
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 8px #888888; */
-  box-shadow:0 6px 59px rgba(0, 0, 0, 0.08);
+  transform: scale(1.02);
+  border: 1px solid;
+  box-shadow: aqua;
 }
 .mat-card-title {
   font-size: 28px;

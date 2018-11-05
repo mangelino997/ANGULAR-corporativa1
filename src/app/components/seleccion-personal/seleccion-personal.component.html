@@ -1,0 +1,77 @@
+<div class="content">
+  <div fxLayoutAlign="">
+    <h1>Definir Perfil - Instrucciones</h1>
+  </div>
+    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Habilitar modo lineal' : 'Deshabilitar modo lineal'}}
+      </button>
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Datos de la Persona/Compañía</ng-template>
+            <div fxLayout="row">
+                <mat-form-field >
+                    <input matInput placeholder="Persona/Compañía" formControlName="firstCtrl" required>
+                </mat-form-field>
+            </div>
+            
+            <mat-form-field>
+              <input matInput placeholder="Nombre" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Razón Social" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Puesto de Trabajo " formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Selección del Perfil Laboral</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Atrás</button>
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Requisitos del puesto</ng-template>
+          
+          <div>
+            <button mat-button matStepperPrevious>Atrás</button>
+            <button mat-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Competencias del postulante</ng-template>
+            
+            <div>
+              <button mat-button matStepperPrevious>Atrás</button>
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Información adicional</ng-template>
+            
+            <div>
+              <button mat-button matStepperPrevious>Atrás</button>
+              <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Confirmar envío</ng-template>
+            Haz finalizado!
+          <div>
+            <button mat-button matStepperPrevious>Atrás</button>
+            <button mat-button (click)="stepper.reset()">Resetear</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+</div>
