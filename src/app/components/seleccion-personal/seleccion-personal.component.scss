@@ -1,11 +1,34 @@
 .content {
-    padding: 120px;
+  padding: 120px;
 }
 .example-container {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
+.example-container > * {
+  width: 100%;
+}
+mat-form-field{
+  width: 40%;
+}
+.mat-card{
+  min-height: 400px;
+  height: auto;
+  margin: 4px;
   
-  .example-container > * {
-    width: 100%;
-  }
+}
+.mat-card-content {
+  height: 300px;
+
+}
+ul {
+  padding-top: 20px;
+}
+table {
+  margin-top: 50px;
+  // overflow-x: auto;
+  // overflow: scroll;
+}
+.div-table {
+  overflow-x:auto;
+}

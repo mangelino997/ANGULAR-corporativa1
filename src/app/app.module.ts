@@ -2,12 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule, MatCardModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule, MatCardModule, MatInputModule, MatNativeDateModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import {MatStepperModule} from '@angular/material/stepper';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatTableModule} from '@angular/material/table';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +50,13 @@ import { SeleccionPersonalComponent } from './components/seleccion-personal/sele
     AppRoutingModule,
     MatTooltipModule,
     ScrollToModule.forRoot(),
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
