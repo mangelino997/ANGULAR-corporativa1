@@ -14,7 +14,7 @@
             <ng-template matStepLabel>Datos de la Persona/Compañía</ng-template>
             <div fxLayout="row">
               <mat-form-field>
-                <mat-select placeholder="Tipo">
+                <mat-select placeholder="Tipo" formControlName="tipo">
                   <mat-option *ngFor="let t of tipo" [value]="t.value">
                     {{t.value}}
                   </mat-option>
@@ -23,58 +23,58 @@
             </div>
             <div fxLayout="row">
               <mat-form-field>
-                <input matInput placeholder="Nombre" formControlName="firstCtrl" required>
+                <input matInput placeholder="Nombre" formControlName="nombre">
               </mat-form-field>
             </div>
             <div fxLayout="row">
             <mat-form-field>
-                  <input matInput placeholder="Razón Social" formControlName="firstCtrl" required>
+                  <input matInput placeholder="Razón Social" formControlName="razonSocial" >
               </mat-form-field>
             </div>
-            <div fxLayout="row">
-                <div fxFlex="30">
+            <div class="row">
+                <div class="col-md-4">
                     <mat-form-field>
-                        <input matInput placeholder="Puesto de Trabajo " formControlName="firstCtrl" required>
+                        <input matInput placeholder="Puesto de Trabajo " formControlName="puestoDeTrabajo" >
                     </mat-form-field>
                 </div>
-                <div fxFlex="30">
+                <div class="col-md-4">
                     <mat-form-field>
-                        <mat-select placeholder="Sexo">
+                        <mat-select placeholder="Sexo" formControlName="sexo">
                           <mat-option *ngFor="let s of sexo" [value]="s.value">
                             {{s.value}}
                           </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
-                <div fxFlex="30">
+                <div class="col-md-4">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento">
+                        <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" formControlName="fechaNacimiento">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
                       </mat-form-field>
                 </div>
               
            </div>
-           <div fxLayout="row">
-             <div fxFlex="30">
+           <div class="row">
+             <div class="col-md-4">
                 <mat-form-field>
-                    <input matInput placeholder="Teléfono" formControlName="firstCtrl" required>
+                    <input matInput type="number" placeholder="Teléfono" formControlName="telefono" >
                 </mat-form-field>
              </div>
-             <div fxFlex="30">
+             <div class="col-md-4">
                 <mat-form-field>
-                    <input matInput placeholder="Domicilio" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Domicilio" formControlName="domicilio" >
                 </mat-form-field>
              </div>
-             <div fxFlex="30">
+             <div class="col-md-4">
                 <mat-form-field>
-                    <input matInput placeholder="Correo electrónico" formControlName="firstCtrl" required>
+                    <input matInput type="email" placeholder="Correo electrónico" formControlName="mail">
                 </mat-form-field>
              </div>
             </div>
             <div fxLayout="row">
                 <mat-form-field>
-                    <input matInput placeholder="Localidad" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Localidad" formControlName="localidad">
                 </mat-form-field>
             </div>
            
@@ -104,7 +104,7 @@
                   </mat-card-content>
                   <mat-divider></mat-divider>
                   <mat-card-actions>
-                    <mat-checkbox class="example-margin" [value]="checkBoxGroup.get('checkBox1')" formControlName="checkBox1" (click)="seleccionado('c1','card1')"> Seleccionar</mat-checkbox>
+                    <mat-checkbox class="example-margin"  formControlName="checkBox1" (change)="seleccionado('card1')"> Seleccionar</mat-checkbox>
                   </mat-card-actions>
                 </mat-card>
           </div>
@@ -127,13 +127,13 @@
                       </ul>
                   </mat-card-content>
                   <mat-divider></mat-divider>
-                  <!-- <mat-card-actions>
-                      <mat-checkbox class="example-margin"  [formControl]="checkBox2"> Seleccionar</mat-checkbox>
-                  </mat-card-actions> -->
+                  <mat-card-actions>
+                      <mat-checkbox class="example-margin" formControlName="checkBox2" (change)="seleccionado('card2')" > Seleccionar</mat-checkbox>
+                  </mat-card-actions>
                 </mat-card>
           </div>
           <div fxFlex="20">
-              <mat-card class="example-card">
+              <mat-card class="example-card" id="card3">
                   <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>Perfil Psicológico del administrativo</mat-card-title>
@@ -150,13 +150,13 @@
                       </ul>
                   </mat-card-content>
                   <mat-divider></mat-divider>
-                  <!-- <mat-card-actions>
-                      <mat-checkbox class="example-margin" [formControl]="checkBox3"> Seleccionar</mat-checkbox>
-                  </mat-card-actions> -->
+                  <mat-card-actions>
+                      <mat-checkbox class="example-margin" formControlName="checkBox3" (change)="seleccionado('card3')" > Seleccionar</mat-checkbox>
+                  </mat-card-actions>
                 </mat-card>
           </div>
           <div fxFlex="20">
-              <mat-card class="example-card">
+              <mat-card class="example-card" id="card4">
                   <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>Perfil psicológico del creativo</mat-card-title>
@@ -172,13 +172,13 @@
                       </ul>
                   </mat-card-content>
                   <mat-divider></mat-divider>
-                  <!-- <mat-card-actions>
-                      <mat-checkbox class="example-margin" [formControl]="checkBox4"> Seleccionar</mat-checkbox>
-                  </mat-card-actions> -->
+                  <mat-card-actions>
+                      <mat-checkbox class="example-margin" formControlName="checkBox4" (change)="seleccionado('card4')" > Seleccionar</mat-checkbox>
+                  </mat-card-actions>
                 </mat-card>
           </div>
           <div fxFlex="20">
-              <mat-card class="example-card">
+              <mat-card class="example-card" id="card5">
                   <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>Perfil psicológico del técnico</mat-card-title>
@@ -195,9 +195,9 @@
                       </ul>
                   </mat-card-content>
                   <mat-divider></mat-divider>
-                  <!-- <mat-card-actions>
-                      <mat-checkbox class="example-margin" [formControl]="checkBox5"> Seleccionar</mat-checkbox>
-                  </mat-card-actions> -->
+                  <mat-card-actions>
+                      <mat-checkbox class="example-margin" formControlName="checkBox5" (change)="seleccionado('card5')" > Seleccionar</mat-checkbox>
+                  </mat-card-actions>
                 </mat-card>
           </div>
           <div>
@@ -212,7 +212,7 @@
           <ng-template matStepLabel>Requisitos del puesto</ng-template>
           <div fxLayout="row">
             <mat-form-field>
-                <mat-select placeholder="Puesto">
+                <mat-select placeholder="Puesto" formControlName="puesto">
                   <mat-option *ngFor="let p of puesto" [value]="p.value">
                       {{p.value}}
                   </mat-option>
@@ -221,22 +221,22 @@
           </div>
          <div fxLayout="row">
             <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Objetivo General del puesto:" rows="3"></textarea>
+              <textarea matInput placeholder="Objetivo General del puesto:" rows="3" formControlName="objetivoDelPuesto"></textarea>
             </mat-form-field>
          </div>
          <div fxLayout="row">
             <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Formación académica:" rows="3"></textarea>
+              <textarea matInput placeholder="Formación académica:" rows="3" formControlName="formacionAcademica"></textarea>
             </mat-form-field>
          </div>
          <div fxLayout="row">
             <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Experiencia laboral:" rows="3"></textarea>
+              <textarea matInput placeholder="Experiencia laboral:" rows="3" formControlName="experienciaLaboral"></textarea>
             </mat-form-field>
          </div>
          <div fxLayout="row">
             <mat-form-field>
-                <mat-select placeholder="Tipo del trabajo">
+                <mat-select placeholder="Tipo del trabajo" formControlName="tipoDelTrabajo">
                   <mat-option *ngFor="let tipoTrabajo of tiposDeTrabajos" [value]="tipoTrabajo.value">
                     {{tipoTrabajo.value}}
                   </mat-option>
@@ -261,9 +261,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let lc of nivelCompetencia">
-                          <td  style="width: 70%;">{{ lc.name }}</td>
-                          <mat-radio-group >
+                      <tr *ngFor="let lc of nivelCompetencia, let i= index">
+                          <td  style="width: 70%;">{{ i }} - {{ lc.name }}</td>
+                          <mat-radio-group formControlName="{{ lc.name }}">
                           <td  style="width: 10%;"><mat-radio-button value="{{lc.radioNivelAlto}}" >{{lc.radioNivelAlto}}</mat-radio-button></td>
                           <td  style="width: 10%;"><mat-radio-button value="{{lc.radioNivelMedio}}" >{{lc.radioNivelMedio}}</mat-radio-button></td>
                           <td  style="width: 10%;"><mat-radio-button value="{{lc.radioNivelBajo}}" >{{lc.radioNivelBajo}}</mat-radio-button></td>
@@ -278,7 +278,7 @@
             </div>
             <div fxLayout="row">
               <mat-form-field class="example-full-width">
-                  <textarea matInput placeholder="Competencia extra:" rows="3"></textarea>
+                  <textarea matInput placeholder="Competencia extra:" rows="3" formControlName="competenciaExtra"></textarea>
               </mat-form-field>
             </div>
             <div fxLayout="row">
@@ -295,7 +295,7 @@
                     <tbody>
                       <tr *ngFor="let tecnica of tecnicas">
                           <td  style="width: 70%;">{{ tecnica.name }}</td>
-                          <mat-radio-group >
+                          <mat-radio-group formControlName="{{ tecnica.name }}">
                           <td  style="width: 10%;"><mat-radio-button value="{{tecnica.radioNivelAlto}}" >{{tecnica.radioNivelAlto}}</mat-radio-button></td>
                           <td  style="width: 10%;"><mat-radio-button value="{{tecnica.radioNivelMedio}}" >{{tecnica.radioNivelMedio}}</mat-radio-button></td>
                           <td  style="width: 10%;"><mat-radio-button value="{{tecnica.radioNivelBajo}}" >{{tecnica.radioNivelBajo}}</mat-radio-button></td>
@@ -310,7 +310,7 @@
             </div>
             <div fxLayout="row">
               <mat-form-field class="example-full-width">
-                  <textarea matInput placeholder="Técnica extra:" rows="3"></textarea>
+                  <textarea matInput placeholder="Técnica extra:" rows="3" formControlName="tecnicaExtra"></textarea>
               </mat-form-field>
             </div>
             <div>
