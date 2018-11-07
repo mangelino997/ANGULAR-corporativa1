@@ -21,32 +21,11 @@ body {
   padding-top: 20px;
 }
 .margin-top-40 {
-  padding-top: 100px;
+  padding-top: 40px;
 }
 .margin-top-64 {
   padding-top: 64px;
 }
-span {
-  font-size: 20px;
-  margin-bottom: inherit;
-}
-.subrayado {
-  height: 3px;
-  background-color: #00BCD4;
-  border-style: unset;
-  width: 40%;
-  
-}
-.tool-tip {
-  font-size: 15px;
-}
-
-.button-responsive > .mat-button > span{
-  font-size: 13px !important;
-  margin-bottom: inherit;
-}
-@media screen and (max-width: 600px) {
-  .mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
-    padding: 0 5px !important;
-  }
+.margin-bottom-80 {
+  margin-bottom: 80px;
 }

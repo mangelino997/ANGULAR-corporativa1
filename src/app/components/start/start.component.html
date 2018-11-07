@@ -1,91 +1,32 @@
-<div class="padding-content" fxLayout="row" id="Inicio">
-<div class="contain-image" fxHide.sm fxHide.xs>
-    <div class="padding-content-column margin-top-20 start-left" fxLayout="column" fxFlex="35" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
-      <div class="banner-left">
-        <div class="text-center">
-          <span class="first-title">Nuestros Servicios</span><br>
-        </div>
-        <div class="text-center normal-text" >
-            <span class="">Realizamos profesiogramas grafológicos analizando el puesto de trabajo
-                y la relación puesto-candidato. Una vez definido el perfil realizaremos los test y pruebas de
-                escritura para analizar que postulante es el adecuado 
-            </span>
-            <button mat-raised-button color="" class="button-second">Definir Perfil Laboral</button>
-        </div>
-        <div class="text-center normal-text" >
-              <span class="">Desarrollamos entrevistas personales guiando al individuo a resolver exámenes
-                        y cuestionarios sencillos orientados a definir sus intereses y aptitudes. Para luego, entregarle
-                        como resultados las diferentes opciones de estudio y academia que puede preferir 
-              </span>
-              <button mat-raised-button color="" class="button-second">Orientación Vocacional</button>
+<div class="padding-content" fxLayout="row">
+  <div class="contain-image">
+    <div class="padding-content-column start-left" fxLayout="column" fxFlex="35">
+      <div class="text-center margin-top-40">
+        <img src="assets/logo.png" width="300" height="300">
+      </div>
+      <br><br>
+      <div fxLayout="column" fxLayoutAlign="end center">
+        <div class="margin-bottom-80 text-center">
+          <span class="second-title">Selección de Personal</span><br>
+          <span class="text-center normal-text">Realizamos profesiogramas grafológicos analizando el puesto de trabajo
+            y la relación puesto-candidato. Una vez definido el perfil realizaremos los test y pruebas de
+            escritura para analizar que postulante es el adecuado</span>
+          <br>
+          <button mat-raised-button color="primary" class="botonInicio">Definir Perfil Laboral</button>
+          <br><br>
+          <span class="second-title">Orientación Vocacional</span><br>
+          <span class="text-center normal-text">Desarrollamos entrevistas personales guiando al individuo a resolver
+            exámenes
+            y cuestionarios sencillos orientados a definir sus intereses y aptitudes. Para luego, entregarle
+            como resultados las diferentes opciones de estudio y academia que puede preferir</span>
+          <br>
+          <button mat-raised-button color="primary" class="botonInicio">Entrevista Vocacional</button>
         </div>
       </div>
-      
     </div>
-    <div class="padding-content-column title-animated" fxLayout="column" fxFlex="65" fxLayoutAlign=" center" fxHide.sm fxHide.xs>
-      <h1 class="first-title"></h1>
-      <svg viewBox="0 0 800 600">
-        <symbol id="s-text">
-          <text text-anchor="middle"
-                x="50%"
-                y="35%"
-                class="text--line"
-                >
-                Ikegraf
-          </text>
-          
-        </symbol>
-        
-        <g class="g-ants">
-          <use xlink:href="#s-text"
-            class="text-copy"></use>     
-          <use xlink:href="#s-text"
-            class="text-copy"></use>     
-          <use xlink:href="#s-text"
-            class="text-copy"></use>     
-          <use xlink:href="#s-text"
-            class="text-copy"></use>     
-          <use xlink:href="#s-text"
-            class="text-copy"></use>     
-        </g>
-      </svg>
+    <div class="padding-content-column" fxLayout="column" fxFlex="65" fxLayoutAlign="center center">
+      <span class="first-title">IkeGraf</span>
+      <span class="txt-rotate subtitle" data-period="1000" data-rotate='["Selección de Personal.", "Orientación Vocacional."]'></span>
     </div>
   </div>
-  <!-- ----------Start Responsive------ -->
-  <div fxLayout="column" fxLayoutAlign=""  fxHide fxShow.xs class="contain-image-responsive">
-      <div class="title-animated">
-        <svg viewBox="0 0 800 600">
-          <symbol id="s-text">
-            <text text-anchor="middle"
-                  x="50%"
-                  y="35%"
-                  class="text--line"
-                  >
-                  Ikegraf
-            </text>
-            
-          </symbol>
-          
-          <g class="g-ants">
-            <use xlink:href="#s-text"
-              class="text-copy"></use>     
-            <use xlink:href="#s-text"
-              class="text-copy"></use>     
-            <use xlink:href="#s-text"
-              class="text-copy"></use>     
-            <use xlink:href="#s-text"
-              class="text-copy"></use>     
-            <use xlink:href="#s-text"
-              class="text-copy"></use>     
-          </g>
-        </svg>
-      </div>
-      <div fxLayoutAlign="center center">
-          <button mat-raised-button>Definir Perfil Laboral</button>
-      </div><br>
-      <div fxLayoutAlign="center center">
-          <button mat-raised-button color="primary">Orientación Vocacional</button>
-      </div>
-  </div>
-  <!-- -------------------------------- -->
 </div>
