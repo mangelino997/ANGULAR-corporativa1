@@ -12,14 +12,14 @@ mat-form-field{
   width: 40%;
 }
 .mat-card{
-  min-height: 400px;
+  min-height: 370px;
   height: auto;
   margin: 4px;
   
 }
 .mat-card-content {
-  height: 300px;
-
+  height: auto;
+  min-height: 370px;
 }
 ul {
   padding-top: 20px;

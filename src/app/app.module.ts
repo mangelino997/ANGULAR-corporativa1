@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule, MatIconModule, MatButtonModule, MatDividerModule, MatCardModule, MatInputModule, MatNativeDateModule } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -12,6 +12,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatTableModule} from '@angular/material/table';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,7 +57,9 @@ import { SeleccionPersonalComponent } from './components/seleccion-personal/sele
     MatNativeDateModule,
     MatAutocompleteModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+
 
 
 @Component({
@@ -15,7 +16,9 @@ export class SeleccionPersonalComponent implements OnInit {
   public puesto:Array<any> = [];
   public tiposDeTrabajos:Array<any> = [];
   public nivelCompetencia:Array<any> = [];
-  
+  public tecnicas:Array<any> = [];
+
+  public checkBoxGroup: FormGroup;
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -30,7 +33,33 @@ export class SeleccionPersonalComponent implements OnInit {
     alert(m);
     };
 
+  public seleccionado(c, n) {
+    // document.getElementById(n).style.backgroundColor= '#40D4AF';
+    // document.getElementById(n).style.color= '#FFFF';
+      // Get the checkbox
+      var checkBox = document.getElementById(c);
+      // Get the output text
+      var text = document.getElementById(n);
+      alert(this.checkBoxGroup.get('checkBox1'));
+      // If the checkbox is checked, display the output text
+      // if (this.secondFormGroup.get('checkBox1') == true){
+      //   text.style.backgroundColor= '#40D4AF';
+      //   text.style.color= '#FFFF';
+      // } else {
+      //   text.style.backgroundColor= '#FFFF';
+      //   text.style.color= 'black';
+      // }
+  }
+
   ngOnInit() {
+    this.checkBoxGroup = new FormGroup({
+      checkBox1: new FormControl(),
+      checkBox2: new FormControl(),
+      checkBox3: new FormControl(),
+      checkBox4: new FormControl(),
+      checkBox5: new FormControl()
+    });
+
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -38,7 +67,7 @@ export class SeleccionPersonalComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      
     });
     this.quarterFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
@@ -70,7 +99,7 @@ export class SeleccionPersonalComponent implements OnInit {
         {value: 'Individual'},
         {value: 'Equipo'} ];
 
-        this.nivelCompetencia = [
+    this.nivelCompetencia = [
           {name:'1- Adaptación', radioNivelAlto: '1-Alto', radioNivelMedio: '1-Medio', radioNivelBajo: '1-Bajo'},
           {name:'2- Ambición profesional', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
           {name:'3- Análisis', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
@@ -98,5 +127,9 @@ export class SeleccionPersonalComponent implements OnInit {
           {name:'25- Trabajo en equipo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'}
       ];
 
+    this.tecnicas = [
+        {name:'1- Atención al detalle', radioNivelAlto: '1-Alto', radioNivelMedio: '1-Medio', radioNivelBajo: '1-Bajo'},
+        {name:'2- Atención al público', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'}
+      ];
     }
 }
