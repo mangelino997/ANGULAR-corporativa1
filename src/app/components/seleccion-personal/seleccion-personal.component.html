@@ -252,7 +252,7 @@
         <mat-step [stepControl]="quarterFormGroup">
           <form [formGroup]="quarterFormGroup">
             <ng-template matStepLabel>Competencias del postulante</ng-template>
-            <div fxLayout="row" class="div-table">
+            <div formArrayName="elementosA" fxLayout="row" class="div-table">
                 <table class="table">
                     <thead>
                       <tr>
@@ -261,14 +261,20 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let lc of nivelCompetencia, let i= index">
-                          <td  style="width: 70%;">{{ i }} - {{ lc.name }}</td>
-                          <mat-radio-group [(ngModel)]="lc.levelselected ">
-                          <td  style="width: 10%;"><mat-radio-button value="{{lc.levelhigh}}" >{{lc.levelhigh}}</mat-radio-button></td>
-                          <td  style="width: 10%;"><mat-radio-button value="{{lc.levelmedium}}" >{{lc.levelmedium}}</mat-radio-button></td>
-                          <td  style="width: 10%;"><mat-radio-button value="{{lc.levellow}}" >{{lc.levellow}}</mat-radio-button></td>
-                      </mat-radio-group>
-                    </tr>
+                      <tr *ngFor="let lc of quarterFormGroup.get('elementosA').controls; let i = index" [formGroupName]="i">
+                        <td style="width: 70%;">{{ i+1 }} - {{ lc.value.name }}</td>
+                        <mat-radio-group formControlName="levelselected">
+                          <td style="width: 10%;">
+                            <mat-radio-button value="levelhigh">{{lc.value.levelhigh}}</mat-radio-button>
+                          </td>
+                          <td style="width: 10%;">
+                            <mat-radio-button value="levelmedium">{{lc.value.levelmedium}}</mat-radio-button>
+                          </td>
+                          <td style="width: 10%;">
+                            <mat-radio-button value="levellow">{{lc.value.levellow}}</mat-radio-button>
+                          </td>
+                        </mat-radio-group>
+                      </tr>
                     </tbody>
                   </table>
             </div>
