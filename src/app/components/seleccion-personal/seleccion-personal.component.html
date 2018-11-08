@@ -263,7 +263,7 @@
                     <tbody>
                       <tr *ngFor="let lc of nivelCompetencia, let i= index">
                           <td  style="width: 70%;">{{ i }} - {{ lc.name }}</td>
-                          <mat-radio-group [(ngModel)]="lc.levelselected ">
+                          <mat-radio-group formControlName="{{ lc.levelselected }}" (click)=mostrar(lc.leveselected)>
                           <td  style="width: 10%;"><mat-radio-button value="{{lc.levelhigh}}" >{{lc.levelhigh}}</mat-radio-button></td>
                           <td  style="width: 10%;"><mat-radio-button value="{{lc.levelmedium}}" >{{lc.levelmedium}}</mat-radio-button></td>
                           <td  style="width: 10%;"><mat-radio-button value="{{lc.levellow}}" >{{lc.levellow}}</mat-radio-button></td>

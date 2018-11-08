@@ -198,32 +198,32 @@ export class SeleccionPersonalComponent implements OnInit {
 
     this.nivelCompetencia = [
 
-          // {name:'adaptacion', radioNivelAlto: '1-Alto', radioNivelMedio: '1-Medio', radioNivelBajo: '1-Bajo'},
-          // {name:'ambicionProfesional', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'}
-          // // {name:'3- Análisis', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'4- Aprendizaje', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'5- Autocontrol', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'6- Autonomía', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'7- Creatividad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'8- Delegación', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'9- Dinamismo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'10- Flexibilidad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'11- Independencia', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'12- Iniciativa', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'13- Integridad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'14- Juicio', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'15- Liderazgo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'16- Negociación y conciliación', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'17- Orientación al servicio', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'18- Persuasión', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'19- Planificación y Organización', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'20- Resolución de Problemas', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'21- Sensibilidad Interpersonal', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'22- Sociabilidad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'23- Toma de decisión', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'24- Trabajo bajo presión', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
-          // // {name:'25- Trabajo en equipo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'}
-      ];
+    //       {name:'adaptacion', radioNivelAlto: '1-Alto', radioNivelMedio: '1-Medio', radioNivelBajo: '1-Bajo'},
+    //       {name:'ambicionProfesional', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'}
+    //       {name:'3- Análisis', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'4- Aprendizaje', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'5- Autocontrol', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'6- Autonomía', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'7- Creatividad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'8- Delegación', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'9- Dinamismo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'10- Flexibilidad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'11- Independencia', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'12- Iniciativa', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'13- Integridad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'14- Juicio', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'15- Liderazgo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'16- Negociación y conciliación', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'17- Orientación al servicio', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'18- Persuasión', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'19- Planificación y Organización', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'20- Resolución de Problemas', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'21- Sensibilidad Interpersonal', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'22- Sociabilidad', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'23- Toma de decisión', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'24- Trabajo bajo presión', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'},
+    //       {name:'25- Trabajo en equipo', radioNivelAlto: '2-Alto', radioNivelMedio: '2-Medio', radioNivelBajo: '2-Bajo'}
+    ];
 
     this.tecnicas = [
         {name:'Atenciónaldetalle', radioNivelAlto: '1-Alto', radioNivelMedio: '1-Medio', radioNivelBajo: '1-Bajo'},
