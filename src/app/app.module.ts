@@ -24,6 +24,10 @@ import { ServiceComponent } from './components/service/service.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SeleccionPersonalComponent } from './components/seleccion-personal/seleccion-personal.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +63,9 @@ import { SeleccionPersonalComponent } from './components/seleccion-personal/sele
     MatTableModule,
     MatRadioModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,17 @@
 @media only screen and (max-width: 1920px) {
   .contain-image {
-    background: url('/assets/write.jpg') no-repeat center top;
+    // background: url('/assets/write.jpg') no-repeat center top;
     // height: 950px;
     height: auto;
-    padding: 60px;
+    padding: 0px;
   }
 }
 @media only screen and (max-width: 1366px) {
   .contain-image {
-    background: url('/assets/write.jpg') no-repeat center top;
+    // background: url('/assets/write.jpg') no-repeat center top;
     // height: 740px;
     height: auto;
-    padding: 60px;
+    padding: 0px;
   }
 }
 
@@ -21,7 +21,7 @@
   text-align: center;
   color: #FFF;
 }
-.container {
+.container-cards {
   padding: 60px;
 }
 .size-card {
@@ -29,8 +29,8 @@
 }
 .title {
   font-size: 50px;
-  color: white;
-  font-weight: bold;
+  color: #FFF;
+  // font-weight: bold;
 }
 .mat-card {
   position: unset;
