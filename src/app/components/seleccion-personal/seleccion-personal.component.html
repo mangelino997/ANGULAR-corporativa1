@@ -79,7 +79,7 @@
             </div>
            
             <div>
-              <button mat-button matStepperNext>Siguiente</button>
+              <button mat-button matStepperNext (click)="verificar()">Siguiente</button>
             </div>
           </form>
         </mat-step>
@@ -263,10 +263,10 @@
                     <tbody>
                       <tr *ngFor="let lc of nivelCompetencia, let i= index">
                           <td  style="width: 70%;">{{ i }} - {{ lc.name }}</td>
-                          <mat-radio-group formControlName="{{ lc.name }}">
-                          <td  style="width: 10%;"><mat-radio-button value="{{lc.radioNivelAlto}}" >{{lc.radioNivelAlto}}</mat-radio-button></td>
-                          <td  style="width: 10%;"><mat-radio-button value="{{lc.radioNivelMedio}}" >{{lc.radioNivelMedio}}</mat-radio-button></td>
-                          <td  style="width: 10%;"><mat-radio-button value="{{lc.radioNivelBajo}}" >{{lc.radioNivelBajo}}</mat-radio-button></td>
+                          <mat-radio-group [(ngModel)]="lc.levelselected ">
+                          <td  style="width: 10%;"><mat-radio-button value="{{lc.levelhigh}}" >{{lc.levelhigh}}</mat-radio-button></td>
+                          <td  style="width: 10%;"><mat-radio-button value="{{lc.levelmedium}}" >{{lc.levelmedium}}</mat-radio-button></td>
+                          <td  style="width: 10%;"><mat-radio-button value="{{lc.levellow}}" >{{lc.levellow}}</mat-radio-button></td>
                       </mat-radio-group>
                     </tr>
                     </tbody>
@@ -315,7 +315,7 @@
             </div>
             <div>
               <button mat-button matStepperPrevious>Atrás</button>
-              <button mat-button matStepperNext>Siguiente</button>
+              <button mat-button matStepperNext (click)="verificar()">Siguiente</button>
             </div>
           </form>
         </mat-step>
@@ -336,7 +336,7 @@
               con los tres candidatos que se asemejan al puesto vacante.</p>
             </div>
             <div fxLayout="row">
-              <mat-radio-group >
+              <mat-radio-group formControlName="profesionalPresente">
                 <mat-radio-button  value="SIN profesional presente">SIN profesional presente</mat-radio-button><br>
                 <mat-radio-button  value="CON profesional presente">CON profesional presente</mat-radio-button>
               </mat-radio-group>
