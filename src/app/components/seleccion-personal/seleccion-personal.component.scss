@@ -35,3 +35,33 @@ table {
 .mat-form-field[_ngcontent-c5] {
   width: 100%;
 }
+// Responsive Layout
+@media only screen and (max-width: 600px) {
+  .content[_ngcontent-c5] {
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .mat-card-content {
+    height: auto;
+    min-height: auto;
+  }
+  .mat-card {
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title-responsive {
+    padding-top: 45px;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  button#toggle-linear{
+    display: none;
+  }
+}

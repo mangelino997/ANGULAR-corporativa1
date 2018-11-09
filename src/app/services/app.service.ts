@@ -11,4 +11,11 @@ export class AppService {
   public listarCompetencias() {
     return this.db.list('/Competencias');
   }
+  public listarTecnicas() {
+    return this.db.list('/Tecnicas');
+  }
+  public listarPuestos() {
+    return this.db.list('/Puesto');
+  }
+
 }

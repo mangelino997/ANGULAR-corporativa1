@@ -66,3 +66,12 @@ a {
   text-decoration: none;
   color: #FFF,
 }
+.cards {
+  place-content: center;
+  align-items: normal !important;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 100%;
+  max-width: 35%;
+}

@@ -10,6 +10,8 @@
     height: 740px;
   }
 }
+
+
 .padding-content {
   padding: 0px 0px;
 }
@@ -53,4 +55,48 @@ span {
 .botonInicio{
   background-color: #0037DB;
   color: #FFF;
+}
+// responsive class
+@media only screen and (max-width: 600px) {
+  .subtitle {
+    font-size: 20px;
+    color: #00BCD4;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .first-title {
+    font-size: 70px;
+    font-style: italic;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: -30px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .contain-image {
+    min-width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .button-responsive {
+    padding-top: 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  button {
+    z-index: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contain-image {
+    background: url('/assets/home.jpg') no-repeat;
+    height: 300px;
+  }
 }

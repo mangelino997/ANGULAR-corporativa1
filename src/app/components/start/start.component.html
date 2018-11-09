@@ -1,4 +1,4 @@
-<div class="padding-content" fxLayout="row">
+<div class="padding-content" fxLayout="row" fxHide.sm fxHide.xs>
   <div class="contain-image">
     <div class="padding-content-column start-left" fxLayout="column" fxFlex="35">
       <div class="text-center margin-top-40">
@@ -27,6 +27,21 @@
     <div class="padding-content-column" fxLayout="column" fxFlex="65" fxLayoutAlign="center center">
       <span class="first-title">IkeGraf</span>
       <span class="txt-rotate subtitle" data-period="1000" data-rotate='["Selección de Personal.", "Orientación Vocacional."]'></span>
+    </div>
+  </div>
+</div>
+<!-- Responsive-->
+<div class="padding-content" fxLayout="row" fxHide fxShow.xs>
+  <div class="contain-image">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div class="animated-responsive" fxLayout="column"  fxLayoutAlign="center">
+        <span class="first-title">IkeGraf</span>
+        <span class="txt-rotate subtitle" data-period="1000" data-rotate='["Selección de Personal.", "Orientación Vocacional."]'></span>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="button-responsive">
+      <button mat-raised-button color="primary" class="botonInicio">Entrevista Vocacional</button>
+    <button mat-raised-button color="primary" class="botonInicio">Definir Perfil Laboral</button>
     </div>
   </div>
 </div>
