@@ -82,7 +82,7 @@
           </div>
         </div>
         <div>
-          <button mat-button matStepperNext (click)="verificar()">Siguiente</button>
+          <button mat-button matStepperNext >Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -196,7 +196,7 @@
           </div>
           <div>
             <button mat-button matStepperPrevious>Atrás</button>
-            <button mat-button matStepperNext>Siguiente</button>
+            <button mat-button matStepperNext >Siguiente</button>
           </div>
         </div>
       </form>
@@ -247,7 +247,7 @@
         </div>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
+          <button mat-button matStepperNext >Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -267,13 +267,13 @@
                 <td style="width: 70%;">{{ i+1 }} - {{ lc.value.name }}</td>
                 <mat-radio-group formControlName="levelselected">
                   <td style="width: 10%;">
-                    <mat-radio-button value="levelhigh">{{lc.value.levelhigh}}</mat-radio-button>
+                    <mat-radio-button value="Alto">{{lc.value.levelhigh}}</mat-radio-button>
                   </td>
                   <td style="width: 10%;">
-                    <mat-radio-button value="levelmedium">{{lc.value.levelmedium}}</mat-radio-button>
+                    <mat-radio-button value="Medio">{{lc.value.levelmedium}}</mat-radio-button>
                   </td>
                   <td style="width: 10%;">
-                    <mat-radio-button value="levellow">{{lc.value.levellow}}</mat-radio-button>
+                    <mat-radio-button value="Bajo">{{lc.value.levellow}}</mat-radio-button>
                   </td>
                 </mat-radio-group>
               </tr>
@@ -305,13 +305,13 @@
                 <td style="width: 70%;">{{ i+1 }} - {{ lt.value.name }}</td>
                 <mat-radio-group formControlName="levelselected">
                   <td style="width: 10%;">
-                    <mat-radio-button value="levelhigh">{{lt.value.levelhigh}}</mat-radio-button>
+                    <mat-radio-button value="Alto">{{lt.value.levelhigh}}</mat-radio-button>
                   </td>
                   <td style="width: 10%;">
-                    <mat-radio-button value="levelmedium">{{lt.value.levelmedium}}</mat-radio-button>
+                    <mat-radio-button value="Medio">{{lt.value.levelmedium}}</mat-radio-button>
                   </td>
                   <td style="width: 10%;">
-                    <mat-radio-button value="levellow">{{lt.value.levellow}}</mat-radio-button>
+                    <mat-radio-button value="Bajo">{{lt.value.levellow}}</mat-radio-button>
                   </td>
                 </mat-radio-group>
               </tr>
@@ -329,7 +329,7 @@
         </div>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext (click)="verificar()">Siguiente</button>
+          <button mat-button matStepperNext >Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -357,7 +357,7 @@
         </div>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
+          <button mat-button matStepperNext >Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -372,7 +372,7 @@
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button (click)="stepper.reset()">Resetear</button>
-        <button mat-raised-button color="primary">Enviar</button>
+        <button mat-raised-button color="primary" (click)="verificar()">Enviar</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
@@ -757,7 +757,7 @@
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button (click)="stepper.reset()">Resetear</button>
-        <button mat-raised-button color="primary">Enviar</button>
+        <button mat-raised-button color="primary" (click)="sendform()">Enviar</button>
       </div>
     </mat-step>
   </mat-vertical-stepper>

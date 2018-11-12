@@ -39,13 +39,161 @@ export class SeleccionPersonalComponent implements OnInit {
 
   }
 
-  public mostrar(m) {
-    alert(m);
+  public mostrar() {
+    // alert(m);
+    console.log(this.firstFormGroup.get('nombre').value+"//");
   };
 
   public verificar() {
-    console.log(this.quarterFormGroup.get('elementosB').value  );
+    
+    let tipo="";
+    if(this.firstFormGroup.get('tipo').value==1){
+      tipo="Persona";
+    }
+    else{
+      tipo="Compañia";
+    }
+    //el siguiente metodo setea el valor correspondiente al campo sexo
+    let sexo="";
+    if(this.firstFormGroup.get('sexo').value==1){
+      sexo="Femenino"
+    }
+    else{
+      sexo="Masculino"
+    }
+    //el siguiente metodo setea el valor correspondiente al checkbox seleccionado
+    let perfilLaboral: Array<any>;
+    let secondFormCheck1="", secondFormCheck2="", secondFormCheck3="", secondFormCheck4="", secondFormCheck5="";
+    if(this.checkBoxGroup.get('checkBox1').value==true){
+      secondFormCheck1="Perfil psicológico del directivo";
+    }
+    if(this.checkBoxGroup.get('checkBox2').value==true){
+      secondFormCheck2="Perfil psicológico del comercial";
+    }
+    if(this.checkBoxGroup.get('checkBox3').value==true){
+      secondFormCheck3="Perfil Psicológico del administrativo";
+    }
+    if(this.checkBoxGroup.get('checkBox4').value==true){
+      secondFormCheck4="Perfil psicológico del creativo";
+    }
+    if(this.checkBoxGroup.get('checkBox5').value==true){
+      secondFormCheck5="Perfil psicológico del técnico";
+    }
+    perfilLaboral = [secondFormCheck1, secondFormCheck2, secondFormCheck3, secondFormCheck4, secondFormCheck5];
+    
+    //el siguiente metodo guarda en un array las competencias y el nivel elegido por el usuario.
+    let comptencias: Array<any>=[];
+    for(let i=0; i<this.quarterFormGroup.get('elementosA').value.length; i++){
+      comptencias.push(this.quarterFormGroup.get('elementosA').value[i]['name']+": "+this.quarterFormGroup.get('elementosA').value[i]['levelselected']); // lo que hago es filtrar todo el json para obtener solo el nombre del checkbox y el campo levelselected elegido por el usuario.
+    }
 
+    //el siguiente metodo guarda en un array las tecnicas y el nivel elegido por el usuario.
+    let tecnics: Array<any>=[];
+    for(let i=0; i<this.quarterFormGroup.get('elementosB').value.length; i++){
+      tecnics.push(this.quarterFormGroup.get('elementosB').value[i]['name']+": "+this.quarterFormGroup.get('elementosB').value[i]['levelselected']); // lo que hago es filtrar todo el json para obtener solo el nombre del checkbox y el campo levelselected elegido por el usuario.
+    }
+
+    let formulario= {
+      "tipo": tipo,
+      "nombre": this.firstFormGroup.get('nombre').value,
+      "razon social": this.firstFormGroup.get('razonSocial').value,
+      "sexo": sexo,
+      "fechaNacimiento": this.firstFormGroup.get('fechaNacimiento').value,
+      "telefono": this.firstFormGroup.get('telefono').value,
+      "domicilio": this.firstFormGroup.get('domicilio').value,
+      "localidad": this.firstFormGroup.get('localidad').value,
+      "mail": this.firstFormGroup.get('mail').value,
+      "perfil laboral": perfilLaboral,
+      "puesto": this.thirdFormGroup.get('puesto').value['name'],
+      "objetivo general del puesto": this.thirdFormGroup.get('objetivoDelPuesto').value,
+      "formacion academica": this.thirdFormGroup.get('formacionAcademica').value,
+      "experiencia laboral": this.thirdFormGroup.get('experienciaLaboral').value,
+      "tipo del trabajo": this.thirdFormGroup.get('tipoDelTrabajo').value,
+      "competencias y nivel": comptencias,
+      "competencia extra": this.quarterFormGroup.get('competenciaExtra').value,
+      "tecnicas y nivel": tecnics, 
+      "tecnica extra": this.quarterFormGroup.get('tecnicaExtra').value,
+      "informacion adicional (profesional presente o no)": this.fifthFormGroup.get('profesionalPresente').value,
+      "observaciones": this.sixthFormGroup.get('observaciones').value,
+    }
+
+    console.log(formulario);
+    
+  }
+ 
+  public sendform(){
+    // console.log(this.firstFormGroup.get('nombre').value+"//");
+    //el siguiente metodo setea el valor correspondiente al campo tipo
+    let tipo="";
+    if(this.firstFormGroup.get('tipo').value==1){
+      tipo="Persona";
+    }
+    else{
+      tipo="Compañia";
+    }
+    //el siguiente metodo setea el valor correspondiente al campo sexo
+    let sexo="";
+    if(this.firstFormGroup.get('sexo').value==1){
+      sexo="Femenino"
+    }
+    else{
+      sexo="Masculino"
+    }
+    //el siguiente metodo setea el valor correspondiente al checkbox seleccionado
+    let perfilLaboral: Array<any>;
+    let secondFormCheck1="", secondFormCheck2="", secondFormCheck3="", secondFormCheck4="", secondFormCheck5="";
+    if(this.checkBoxGroup.get('checkBox1').value==true){
+      secondFormCheck1="Perfil psicológico del directivo";
+    }
+    if(this.checkBoxGroup.get('checkBox2').value==true){
+      secondFormCheck2="Perfil psicológico del comercial";
+    }
+    if(this.checkBoxGroup.get('checkBox3').value==true){
+      secondFormCheck3="Perfil Psicológico del administrativo";
+    }
+    if(this.checkBoxGroup.get('checkBox4').value==true){
+      secondFormCheck4="Perfil psicológico del creativo";
+    }
+    if(this.checkBoxGroup.get('checkBox5').value==true){
+      secondFormCheck5="Perfil psicológico del técnico";
+    }
+    perfilLaboral = [secondFormCheck1, secondFormCheck2, secondFormCheck3, secondFormCheck4, secondFormCheck5];
+    
+    //el siguiente metodo guarda en un array las competencias y el nivel elegido por el usuario.
+    let comptencias: Array<any>=[];
+    for(let i=0; i<this.quarterFormGroup.get('elementosA').value.length; i++){
+      comptencias.push(this.quarterFormGroup.get('elementosA').value[i]['name']+": "+this.quarterFormGroup.get('elementosA').value[i]['levelselected']); // lo que hago es filtrar todo el json para obtener solo el nombre del checkbox y el campo levelselected elegido por el usuario.
+    }
+
+    //el siguiente metodo guarda en un array las tecnicas y el nivel elegido por el usuario.
+    let tecnics: Array<any>=[];
+    for(let i=0; i<this.quarterFormGroup.get('elementosB').value.length; i++){
+      tecnics.push(this.quarterFormGroup.get('elementosB').value[i]['name']+": "+this.quarterFormGroup.get('elementosB').value[i]['levelselected']); // lo que hago es filtrar todo el json para obtener solo el nombre del checkbox y el campo levelselected elegido por el usuario.
+    }
+
+    let formulario= {
+      "tipo": tipo,
+      "nombre": this.firstFormGroup.get('nombre').value,
+      "razon social": this.firstFormGroup.get('razonSocial').value,
+      "sexo": sexo,
+      "fechaNacimiento": this.firstFormGroup.get('fechaNacimiento').value,
+      "telefono": this.firstFormGroup.get('telefono').value,
+      "domicilio": this.firstFormGroup.get('domicilio').value,
+      "localidad": this.firstFormGroup.get('localidad').value,
+      "mail": this.firstFormGroup.get('mail').value,
+      "perfil laboral": perfilLaboral,
+      "puesto": this.thirdFormGroup.get('puesto').value['name'],
+      "objetivo general del puesto": this.thirdFormGroup.get('objetivoDelPuesto').value,
+      "formacion academica": this.thirdFormGroup.get('formacionAcademica').value,
+      "experiencia laboral": this.thirdFormGroup.get('experienciaLaboral').value,
+      "tipo del trabajo": this.thirdFormGroup.get('tipoDelTrabajo').value,
+      "competencias y nivel": comptencias,
+      "competencia extra": this.quarterFormGroup.get('competenciaExtra').value,
+      "tecnicas y nivel": tecnics, 
+      "tecnica extra": this.quarterFormGroup.get('tecnicaExtra').value,
+      "informacion adicional (profesional presente o no)": this.fifthFormGroup.get('profesionalPresente').value,
+      "observaciones": this.sixthFormGroup.get('profesionalPresente').value,
+    }
   }
 
   public seleccionado(n) {
@@ -173,8 +321,8 @@ export class SeleccionPersonalComponent implements OnInit {
   ngOnInit() {
     this.firstFormGroup = new FormGroup({
       tipo: new FormControl('', Validators.required),
-      nombre: new FormControl('', Validators.required),
-      razonSocial: new FormControl('', Validators.required),
+      nombre: new FormControl('', ),
+      razonSocial: new FormControl('', ),
       puestoDeTrabajo: new FormControl('', Validators.required),
       sexo: new FormControl('', Validators.required),
       fechaNacimiento: new FormControl('', Validators.required),
@@ -206,16 +354,14 @@ export class SeleccionPersonalComponent implements OnInit {
       formacionAcademica: new FormControl('', Validators.required),
       experienciaLaboral: new FormControl('', Validators.required),
       tipoDelTrabajo: new FormControl('', Validators.required),
-      elementosC: this._formBuilder.array([])
+      // elementosC: this._formBuilder.array([])
     });
     this.quarterFormGroup = this._formBuilder.group({
       // adaptacion: new FormControl('', Validators.required),
       // ambicionProfesional: new FormControl('', Validators.required),
       // Análisis: new FormControl('', Validators.required)
-      competenciaExtra: new FormControl('', Validators.required),
-      Atenciónaldetalle: new FormControl('', Validators.required),
-      Atenciónalpúblico: new FormControl('', Validators.required),
-      tecnicaExtra: new FormControl('', Validators.required),
+      competenciaExtra: new FormControl('', ),
+      tecnicaExtra: new FormControl('', ),
       elementosA: this._formBuilder.array([]),
       elementosB: this._formBuilder.array([])
     });
@@ -225,7 +371,7 @@ export class SeleccionPersonalComponent implements OnInit {
       
     });
     this.sixthFormGroup = this._formBuilder.group({
-      observaciones: new FormControl('', Validators.required)
+      observaciones: new FormControl('', )
     });
     this.sexo = ['Masculino', 'Femenino'];
     this.puesto = [
@@ -272,7 +418,7 @@ export class SeleccionPersonalComponent implements OnInit {
     return this._formBuilder.group(e)
   }
 
-  private crearElementoC(e): FormGroup {
-    return this._formBuilder.group(e)
-  }
+  // private crearElementoC(e): FormGroup {
+  //   return this._formBuilder.group(e)
+  // }
 }

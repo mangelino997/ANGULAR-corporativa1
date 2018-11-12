@@ -12,7 +12,8 @@ export class ToolbarComponent implements OnInit {
   constructor(private _scrollToService: ScrollToService, private router:Router) { }
   public triggerScrollTo(m) {
     if(this.router.url === '/seleccionpersonal') {
-      this.router.navigate(['home']);
+      // this.router.navigate(['home']);
+      location.href='home';
     } else {
       const config: ScrollToConfigOptions = {
         target: m
