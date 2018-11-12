@@ -1,5 +1,5 @@
 .content {
-  padding: 120px;
+  padding: 20px;
 }
 .example-container {
   display: flex;
@@ -11,23 +11,18 @@
 mat-form-field{
   width: 40%;
 }
-.mat-card{
-  min-height: 370px;
-  height: auto;
+mat-card {
   margin: 4px;
-  
 }
 .mat-card-content {
-  height: auto;
-  min-height: 370px;
+  min-height: 340px;
+  padding-top: 5px;
 }
 ul {
   padding-top: 20px;
 }
 table {
   margin-top: 50px;
-  // overflow-x: auto;
-  // overflow: scroll;
 }
 .div-table {
   overflow-x:auto;

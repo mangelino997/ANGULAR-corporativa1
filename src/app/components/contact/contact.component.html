@@ -1,25 +1,25 @@
 <div class="contactbackground" (mouseenter)="animateMe()" (mouseleave)="animateMe()" id="Contacto">
   <div fxLayout="row" class="contact-icon" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
-    <div fxFlex="20" class="animated fadeInLeft" >
-      <img src="assets/ubicacion.png" >
-      <div >
+    <div fxFlex="20" class="animated fadeInLeft">
+      <img src="assets/ubicacion.png">
+      <div>
         <h2>Ubicación</h2>
         <hr class="contact-divider">
         <span>Cede Villa Carlos Paz</span>
       </div>
     </div>
-    <div fxFlex="20"  class="animated zoomIn">
+    <div fxFlex="20" class="animated zoomIn">
       <img src="assets/contacto.png">
-      <div >
+      <div>
         <h2>Contactos</h2>
         <hr class="contact-divider">
         <span>Teléfono:</span><br>
         <span>Correo electrónico:</span>
       </div>
     </div>
-    <div fxFlex="20"  class="animated fadeInRight">
+    <div fxFlex="20" class="animated fadeInRight">
       <img src="assets/social.png">
-      <div >
+      <div>
         <h2>Redes</h2>
         <hr class="contact-divider">
         <span>Facebook</span>
@@ -32,16 +32,17 @@
       <mat-card class="example-card">
         <form [formGroup]="form">
           <mat-form-field class="example-full-width">
-            <input matInput autocomplete="off" placeholder="Nombre"  formControlName="name" type="text" >
+            <input matInput autocomplete="off" placeholder="Nombre" formControlName="name" type="text">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput autocomplete="off" placeholder="Teléfono"  formControlName="phone" type="number" min="1">
+            <input matInput autocomplete="off" placeholder="Teléfono" formControlName="phone" type="number" min="1">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput autocomplete="off" placeholder="Correo electrónico"  formControlName="email" type="email" >
+            <input matInput autocomplete="off" placeholder="Correo electrónico" formControlName="email" type="email">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <textarea matInput autocomplete="off" placeholder="Observación" formControlName="observacion" type="email" rows="3"></textarea>
+            <textarea matInput autocomplete="off" placeholder="Observación" formControlName="observacion" type="email"
+              rows="3"></textarea>
           </mat-form-field>
           <button (click)="mostrar()" mat-raised-button color="primary">Enviar</button>
         </form>
@@ -49,11 +50,10 @@
     </div>
     <div fxFlex="25" fxLayoutAlign="ceneter"></div>
   </div>
-  
-   <!-- Icons Responsive-->
-   <div fxLayout="column" fxLayoutAlign="stretch center"  fxHide fxShow.xs class="icons-responsive">
-    <div  class="animated fadeInLeft" >
-      <img src="assets/ubicacion.png" >
+  <!-- Icons Responsive-->
+  <div fxLayout="column" fxLayoutAlign="stretch center" fxHide fxShow.sm fxShow.xs class="icons-responsive">
+    <div class="animated fadeInLeft">
+      <img src="assets/ubicacion.png">
     </div>
     <div class="contact-align-responsive">
       <h2>Ubicación</h2>
@@ -76,21 +76,22 @@
     </div>
   </div>
   <!-- Contact form Responsive-->
-  <div fxLayout="column" fxLayoutAlign="stretch center"  fxHide fxShow.xs>
+  <div fxLayout="column" fxLayoutAlign="stretch center" fxHide fxShow.sm fxShow.xs>
     <div fxLayoutAlign="">
       <mat-card class="example-card">
         <form [formGroup]="form">
           <mat-form-field class="example-full-width">
-            <input matInput autocomplete="off" placeholder="Nombre"  formControlName="name" type="text" >
+            <input matInput autocomplete="off" placeholder="Nombre" formControlName="name" type="text">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput autocomplete="off" placeholder="Teléfono"  formControlName="phone" type="number" min="1">
+            <input matInput autocomplete="off" placeholder="Teléfono" formControlName="phone" type="number" min="1">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput autocomplete="off" placeholder="Correo electrónico"  formControlName="email" type="email" >
+            <input matInput autocomplete="off" placeholder="Correo electrónico" formControlName="email" type="email">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <textarea matInput autocomplete="off" placeholder="Observación" formControlName="observacion" type="email" rows="3"></textarea>
+            <textarea matInput autocomplete="off" placeholder="Observación" formControlName="observacion" type="email"
+              rows="3"></textarea>
           </mat-form-field>
           <button (click)="mostrar()" mat-raised-button color="primary">Enviar</button>
         </form>

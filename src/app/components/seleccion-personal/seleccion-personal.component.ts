@@ -10,8 +10,7 @@ import { AppService } from '../../services/app.service';
 })
 export class SeleccionPersonalComponent implements OnInit {
 
-
-  public tipo: Array<any> = [];
+  public mostrarTipo:boolean = true;
   public sexo: Array<any> = [];
   public puesto: Array<any> = [];
   public tiposDeTrabajos: Array<any> = [];
@@ -168,7 +167,9 @@ export class SeleccionPersonalComponent implements OnInit {
         break;
     }
   }
-
+  public cambioTipo() {
+    this.mostrarTipo = this.firstFormGroup.get('tipo').value == 1 ? true : false;
+  }
   ngOnInit() {
     this.firstFormGroup = new FormGroup({
       tipo: new FormControl('', Validators.required),
@@ -185,7 +186,6 @@ export class SeleccionPersonalComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-
     this.checkBoxGroup = new FormGroup({
       checkBox1: new FormControl(),
       checkBox2: new FormControl(),
@@ -200,8 +200,6 @@ export class SeleccionPersonalComponent implements OnInit {
       checkBox4responsive: new FormControl(),
       checkBox5responsive: new FormControl()
     });
-    
-
     this.thirdFormGroup = new FormGroup({
       puesto: new FormControl('', Validators.required),
       objetivoDelPuesto: new FormControl('', Validators.required),
@@ -229,12 +227,7 @@ export class SeleccionPersonalComponent implements OnInit {
     this.sixthFormGroup = this._formBuilder.group({
       observaciones: new FormControl('', Validators.required)
     });
-    this.tipo = [
-      { value: 'Persona' },
-      { value: 'Compañía' }];
-    this.sexo = [
-      { value: 'Masculino' },
-      { value: 'Femenino' }];
+    this.sexo = ['Masculino', 'Femenino'];
     this.puesto = [
       { value: 'Gerente general' },
       { value: 'Comercial (ventas y marketing' },

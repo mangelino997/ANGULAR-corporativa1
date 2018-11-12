@@ -1,16 +1,15 @@
-<mat-toolbar color="primary" >
+<mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span fxHide.sm fxHide.xs><a href="index.html">Ikegraf</a></span>
+    <span fxHide.sm fxHide.xs><a (click)="triggerScrollTo('Inicio')">Ikegraf</a></span>
     <span class="spacer"></span>
     <div *ngFor="let m of menu" fxHide.sm fxHide.xs>
-      <button mat-button (click)="triggerScrollTo(m)" >{{m}}</button>
+      <button mat-button (click)="triggerScrollTo(m)">{{m}}</button>
     </div>
-      <!--responsive-->
-      <div *ngFor="let m of menu" fxHide fxShow.xs class="button-responsive">
-        <button mat-button  (click)="triggerScrollTo(m)">{{m}}</button>
-      </div>
-      <!-------------->
-    
+    <!--responsive-->
+    <div *ngFor="let m of menu" fxHide fxShow.sm fxShow.xs class="button-responsive">
+      <button mat-button (click)="triggerScrollTo(m)">{{m}}</button>
+    </div>
+    <!-------------->
     <span class="spacer"></span>
     <mat-icon class="space-icon" fxHide.sm fxHide.xs>favorite</mat-icon>
     <mat-icon class="space-icon" fxHide.sm fxHide.xs>edit</mat-icon>

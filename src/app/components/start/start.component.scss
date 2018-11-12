@@ -1,22 +1,22 @@
-@media only screen and (max-width: 1920px) {
+@media only screen and (min-width: 1920px) {
   .contain-image {
     background: url('/assets/home.jpg') no-repeat;
+    width: 100%;
     height: 950px;
   }
 }
-@media only screen and (max-width: 1366px) {
+@media only screen and (min-width: 400px) {
   .contain-image {
     background: url('/assets/home.jpg') no-repeat;
+    width: 100%;
     height: 740px;
   }
 }
-
-
 .padding-content {
   padding: 0px 0px;
 }
 .padding-content-column {
-  padding: 0px 100px;
+  padding: 0px 10px;
 
 }
 .first-title {
@@ -33,12 +33,12 @@
   color: #00BCD4;
 }
 .second-title {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   color: #FFF;
 }
 .normal-text {
-  font-size: 18px;
+  font-size: 1em;
 }
 span {
   color: white;
@@ -93,7 +93,6 @@ span {
     z-index: auto;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .contain-image {
     background: url('/assets/home.jpg') no-repeat;

@@ -45,3 +45,9 @@ body {
     font-size: 12px;
   }
 }
+*, ::after, ::before {
+  box-sizing: unset;
+}
+.tool-tip {
+  font-size: 15px !important;
+}

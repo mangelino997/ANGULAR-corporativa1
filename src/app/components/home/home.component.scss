@@ -40,3 +40,18 @@
   .background-web {
     background-image: linear-gradient(to bottom, #9f9f9f, #989eae, #81a1bc, #5aa6c3, #00abbe) !important;
   }
+
+.mat-divider-service {
+  display: block;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #00abbe;
+  box-shadow: 0 4px 8px 0 #00abbe;
+}
+.mat-divider-contact {
+  display: block;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #9f9f9f;
+  box-shadow: 0 4px 8px 0 #9f9f9f;
+}

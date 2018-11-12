@@ -5,99 +5,92 @@
       <span class="title">Nuestros Servicios</span>
     </div>
   </div>
-  <div class="container-cards" >
-    <div fxLayout="row">
-      <div fxFlex="15" fxLayoutAlign="center center" fxHide.sm fxHide.xs>
-      </div>
-      <div fxFlex="35"  fxLayoutAlign="center center"  fxHide.sm fxHide.xs>
+  <div class="container-cards">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="50" fxLayoutAlign="center" fxHide.sm fxHide.xs>
         <mat-card class="size-card">
-            <mat-card-header fxLayoutAlign="center center">
-                <mat-card-title><b>Selección de Personal</b></mat-card-title>
-            </mat-card-header>
-          <img mat-card-image src="/assets/sel-personal.jpg" height="350px">
+          <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title><b>Selección de Personal</b></mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="/assets/sel-personal.jpg" height="250px">
           <mat-card-content>
-            <p class="text-center">
+            <span class="text-center font-size-card">
               Al definir el perfil laboral desempeñaremos, a través de la escritura y la entrevista,
               las evaluaciones de personal para identificar aptitudes e intereses y así lograr la productividad
               del funcionario. También excelente herramienta para la reorganización de una empresa,
               al ser consciente de los aspectos positivos y negativos de los integrantes.
-            </p>
+            </span>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary"><a href="/seleccionpersonal">Definer Perfil Laboral</a></button>
+            <button mat-raised-button color="primary"><a routerLink="/seleccionpersonal">Definer Perfil Laboral</a></button>
           </mat-card-actions>
         </mat-card>
       </div>
-      <div fxFlex="35" fxLayoutAlign="center center" fxHide.sm fxHide.xs class="cards">
+      <div fxFlex="50" fxLayoutAlign="center" fxHide.sm fxHide.xs>
         <mat-card class="size-card">
-            <mat-card-header fxLayoutAlign="center center">
-                <mat-card-title><b>Orientación Vocacional</b></mat-card-title>
-              </mat-card-header>
-          <img mat-card-image src="/assets/ori-vocacional.jpg" height="350px">
+          <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title><b>Orientación Vocacional</b></mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="/assets/ori-vocacional.jpg" height="250px">
           <mat-card-content>
-            <p class="text-center">
+            <span class="text-center font-size-card">
               Realizaremos un conjunto de prácticas destinadas al esclarecimiento de su vocación.
               Ideal para adolescentes que se encuentran próximos a finalizar sus estudios secundarios
               pero también a jóvenes en general y hasta adultos insertados laboralmente que evalúan la
               posibilidad de una nueva formación o capacitación.
-            </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-raised-button color="primary">Solicitar Entrevista Vocacional</button>
-            </mat-card-actions>
+            </span>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">Solicitar Entrevista Vocacional</button>
+          </mat-card-actions>
         </mat-card>
       </div>
-      <div fxFlex="15" fxLayoutAlign="center center" fxHide.sm fxHide.xs></div>
     </div>
   </div>
 </div>
-
 <!-- Service Responsive -->
 <div class="">
-  <div fxLayout="column" fxLayoutAlign=" stretch"  fxHide fxShow.xs>
-      <div class="container-title-responsive">
-          <div fxLayout="row" fxLayoutAlign="center center" >
-            <span class="title-responsive">Nuestros Servicios</span>
-          </div>
-      </div>
-      <div>
-          <mat-card class="size-card">
-            <img mat-card-image src="/assets/sel-personal.jpg" height="350px">
-            <mat-card-header fxLayoutAlign="center center">
-                <mat-card-title><b>Selección de Personal</b></mat-card-title>
-              </mat-card-header>
-            <mat-card-content>
-              <p class="text-center">
-                Al definir el perfil laboral desempeñaremos, a través de la escritura y la entrevista,
-                las evaluaciones de personal para identificar aptitudes e intereses y así lograr la productividad
-                del funcionario. También excelente herramienta para la reorganización de una empresa,
-                al ser consciente de los aspectos positivos y negativos de los integrantes.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-raised-button color="primary">Definer Perfil Laboral</button>
-            </mat-card-actions>
-          </mat-card>
-      </div>
-      <div >
-          <mat-card class="size-card">
-            <img mat-card-image src="/assets/ori-vocacional.jpg" height="350px">
-            <mat-card-header fxLayoutAlign="center center">
-                <mat-card-title><b>Orientación Vocacional</b></mat-card-title>
-              </mat-card-header>
-            <mat-card-content>
-              <p class="text-center vocacional">
-                Realizaremos un conjunto de prácticas destinadas al esclarecimiento de su vocación.
-                Ideal para adolescentes que se encuentran próximos a finalizar sus estudios secundarios
-                pero también a jóvenes en general y hasta adultos insertados laboralmente que evalúan la
-                posibilidad de una nueva formación o capacitación.
-              </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-raised-button color="primary" class="">Solicitar Entrevista Vocacional</button>
-              </mat-card-actions>
-          </mat-card>
+  <div fxLayout="column" fxLayoutAlign="stretch center" fxHide fxShow.sm fxShow.xs>
+    <div class="container-title-responsive">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span class="title-responsive">Nuestros Servicios</span>
       </div>
     </div>
+    <mat-card class="size-card">
+      <img mat-card-image src="/assets/sel-personal.jpg" height="250px">
+      <mat-card-header fxLayoutAlign="center center">
+        <mat-card-title><b>Selección de Personal</b></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <span class="text-center font-size-card">
+          Al definir el perfil laboral desempeñaremos, a través de la escritura y la entrevista,
+          las evaluaciones de personal para identificar aptitudes e intereses y así lograr la productividad
+          del funcionario. También excelente herramienta para la reorganización de una empresa,
+          al ser consciente de los aspectos positivos y negativos de los integrantes.
+        </span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Definer Perfil Laboral</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="size-card">
+      <img mat-card-image src="/assets/ori-vocacional.jpg" height="250px">
+      <mat-card-header fxLayoutAlign="center center">
+        <mat-card-title><b>Orientación Vocacional</b></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <span class="text-center font-size-card">
+          Realizaremos un conjunto de prácticas destinadas al esclarecimiento de su vocación.
+          Ideal para adolescentes que se encuentran próximos a finalizar sus estudios secundarios
+          pero también a jóvenes en general y hasta adultos insertados laboralmente que evalúan la
+          posibilidad de una nueva formación o capacitación.
+        </span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="">Solicitar Entrevista Vocacional</button>
+      </mat-card-actions>
+    </mat-card>
+    <br><br>
   </div>
+</div>
 <!-- ---------------End Responsive----------------- -->

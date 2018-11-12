@@ -5,6 +5,7 @@ import { SeleccionPersonalComponent } from './components/seleccion-personal/sele
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'seleccionpersonal', component: SeleccionPersonalComponent}
 ];
 
