@@ -4,21 +4,24 @@
     width: 100%;
     height: 950px;
   }
+  .padding-content-column {
+    padding: 40px 10px;
+  }
 }
 @media only screen and (max-width: 1366px) {
   .contain-image {
     background: url('/assets/home.jpg') no-repeat;
     width: 100%;
-    height: 740px;
+    // height: 740px;
+  }
+  .padding-content-column {
+    padding: 20px 10px;
   }
 }
 .padding-content {
   padding: 0px 0px;
 }
-.padding-content-column {
-  padding: 0px 10px;
 
-}
 .first-title {
   font-size: 120px;
   font-weight: bold;
