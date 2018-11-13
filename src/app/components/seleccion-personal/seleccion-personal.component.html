@@ -362,18 +362,20 @@
       </form>
     </mat-step>
     <mat-step [stepControl]="sixthFormGroup">
+      <form [formGroup]="sixthFormGroup">
       <ng-template matStepLabel>Confirmar envío</ng-template>
       Haz finalizado!
       <div fxLayout="row">
         <mat-form-field>
-          <textarea matInput placeholder="Observaciones:" rows="5"></textarea>
+          <textarea matInput placeholder="Observaciones:" rows="5" formControlName="observaciones"></textarea>
         </mat-form-field>
       </div>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button (click)="stepper.reset()">Resetear</button>
-        <button mat-raised-button color="primary" (click)="verificar()">Enviar</button>
+        <button mat-raised-button color="primary" (click)="sendform()">Enviar</button>
       </div>
+      </form>
     </mat-step>
   </mat-horizontal-stepper>
 </div>
@@ -393,374 +395,380 @@
     </p>
   </div>
   <mat-vertical-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Datos de la Persona/Compañía</ng-template>
-        <div fxLayout="row">
-          <mat-form-field>
-            <mat-select placeholder="Tipo" formControlName="tipo">
-              <mat-option *ngFor="let t of tipo" [value]="t.value">
-                {{t.value}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <input matInput placeholder="Nombre" formControlName="nombre">
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <input matInput placeholder="Razón Social" formControlName="razonSocial">
-          </mat-form-field>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
+      <mat-step [stepControl]="firstFormGroup">
+          <div class="row"></div>
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Datos Persona/Compañía</ng-template>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Tipo" formControlName="tipo" (selectionChange)="cambioTipo()">
+                    <mat-option [value]="1">Persona</mat-option>
+                    <mat-option [value]="2">Compañía</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row" *ngIf="mostrarTipo">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput placeholder="Nombre" formControlName="nombre">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row" *ngIf="!mostrarTipo">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput placeholder="Razón Social" formControlName="razonSocial">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput placeholder="Puesto de Trabajo" formControlName="puestoDeTrabajo">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Sexo" formControlName="sexo">
+                    <mat-option [value]="1">Femenino</mat-option>
+                    <mat-option [value]="2">Masculino</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input type="date" matInput placeholder="Fecha de Nacimiento" formControlName="fechaNacimiento">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Teléfono" formControlName="telefono">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput placeholder="Domicilio" formControlName="domicilio">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput placeholder="Localidad" formControlName="localidad">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput type="email" placeholder="Correo electrónico" formControlName="mail">
+                </mat-form-field>
+              </div>
+            </div>
+            <div>
+              <button mat-button matStepperNext >Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <ng-template matStepLabel>Selección del Perfil Laboral</ng-template>
+          <form [formGroup]="checkBoxGroup" fxHide.sm fxHide.xs>
+            <div fxLayout="row">
+              <div fxFlex="20">
+                <mat-card id="card1">
+                  <mat-card-header>
+                    <mat-card-title>Perfil psicológico del directivo</mat-card-title>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <mat-card-content>
+                    * Objetividad y sentido de la justica. <br>
+                    * Dotes de mando y Dinamismo. <br>
+                    * Visión del futuro y capacidad de planificación. <br>
+                    * Capacidad de comunicación, diplomacia y empatía.
+                  </mat-card-content>
+                  <mat-divider></mat-divider>
+                  <mat-card-actions>
+                    <mat-checkbox formControlName="checkBox1" (change)="seleccionado('card1')">
+                      Seleccionar
+                    </mat-checkbox>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div fxFlex="20">
+                <mat-card id="card2">
+                  <mat-card-header>
+                    <mat-card-title>Perfil psicológico del comercial</mat-card-title>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <mat-card-content>
+                    * Dotes de comunicación: facilidad de palabra, capacidad para convencer, llegar al otro y venderse como
+                    imagen de lo que representa. <br>
+                    * Dinamismo, actividad. <br>
+                    * Adaptabilidad, Sociabilidad. <br>
+                    * Iniciativa: visión y proyección del futuro, creatividad para aportar idea nuevas. <br>
+                    * Ambición moderada: ganas de auto superarse, espíritu competitivo. <br>
+                    * Vitalidad: persona saludable, capaz de exponerse a constantes cambios.
+                  </mat-card-content>
+                  <mat-divider></mat-divider>
+                  <mat-card-actions>
+                    <mat-checkbox formControlName="checkBox2" (change)="seleccionado('card2')">
+                      Seleccionar</mat-checkbox>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div fxFlex="20">
+                <mat-card id="card3">
+                  <mat-card-header>
+                    <mat-card-title>Perfil Psicológico del administrativo</mat-card-title>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <mat-card-content>
+                    * Capacidad de orden y organización. <br>
+                    * Constancia y regularidad en el trabajo. <br>
+                    * Agilidad mental. <br>
+                    * Visión del futuro, planificación. <br>
+                    * Capacidad de análisis. <br>
+                    * Facilidad de relación y negociación.
+                  </mat-card-content>
+                  <mat-divider></mat-divider>
+                  <mat-card-actions>
+                    <mat-checkbox formControlName="checkBox3" (change)="seleccionado('card3')">
+                      Seleccionar</mat-checkbox>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div fxFlex="20">
+                <mat-card id="card4">
+                  <mat-card-header>
+                    <mat-card-title>Perfil psicológico del creativo</mat-card-title>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <mat-card-content>
+                    * No admite rutinas, exige libertad para dejar volar su imaginación e inspiración. <br>
+                    * Iniciativa y decisión. <br>
+                    * Dotes de observación. <br>
+                    * Agilidad mental. <br>
+                    * Apertura de criterios.
+                  </mat-card-content>
+                  <mat-divider></mat-divider>
+                  <mat-card-actions>
+                    <mat-checkbox formControlName="checkBox4" (change)="seleccionado('card4')">
+                      Seleccionar</mat-checkbox>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div fxFlex="20">
+                <mat-card id="card5">
+                  <mat-card-header>
+                    <mat-card-title>Perfil psicológico del técnico</mat-card-title>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <mat-card-content>
+                    * Capacidad de planificación: Cumplimiento de plazos. <br>
+                    * Dotes de observación: Capacidad para ver el detalle. <br>
+                    * Creatividad: Imaginación para aportar nuevas ideas. <br>
+                    * Constancia: Perseverancia para la realización de la tarea. <br>
+                    * Precisión: Perfeccionismo. <br>
+                    * Iniciativa y decisión: Facilidad para encontrar soluciones, improvisación.
+                  </mat-card-content>
+                  <mat-divider></mat-divider>
+                  <mat-card-actions>
+                    <mat-checkbox formControlName="checkBox5" (change)="seleccionado('card5')">
+                      Seleccionar</mat-checkbox>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              <div>
+                <button mat-button matStepperPrevious>Atrás</button>
+                <button mat-button matStepperNext >Siguiente</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Requisitos del puesto</ng-template>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Puesto" formControlName="puesto">
+                    <mat-option *ngFor="let job of puestos" [value]="job">
+                      {{job.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <textarea matInput placeholder="Objetivo General del puesto:" rows="3" formControlName="objetivoDelPuesto"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <textarea matInput placeholder="Formación académica:" rows="3" formControlName="formacionAcademica"></textarea>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <textarea matInput placeholder="Experiencia laboral:" rows="3" formControlName="experienciaLaboral"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Tipo del trabajo" formControlName="tipoDelTrabajo">
+                    <mat-option *ngFor="let tipoTrabajo of tiposDeTrabajos" [value]="tipoTrabajo.value">
+                      {{tipoTrabajo.value}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious>Atrás</button>
+              <button mat-button matStepperNext >Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="quarterFormGroup">
+          <form [formGroup]="quarterFormGroup">
+            <ng-template matStepLabel>Competencias del postulante</ng-template>
+            <div formArrayName="elementosA" fxLayout="row" class="div-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 70%;">COMPETENCIA</th>
+                    <th scope="col" style="width: 30%;">NIVEL </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let lc of quarterFormGroup.get('elementosA').controls; let i = index" [formGroupName]="i">
+                    <td style="width: 70%;">{{ i+1 }} - {{ lc.value.name }}</td>
+                    <mat-radio-group formControlName="levelselected">
+                      <td style="width: 10%;">
+                        <mat-radio-button value="Alto">{{lc.value.levelhigh}}</mat-radio-button>
+                      </td>
+                      <td style="width: 10%;">
+                        <mat-radio-button value="Medio">{{lc.value.levelmedium}}</mat-radio-button>
+                      </td>
+                      <td style="width: 10%;">
+                        <mat-radio-button value="Bajo">{{lc.value.levellow}}</mat-radio-button>
+                      </td>
+                    </mat-radio-group>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div fxLayout="row">
+              <p><b>¿Desea agregar alguna competencia que considera importante y no fue nombrada?</b><br>
+                Ingrese el nombre de la competencia y si su nivel es Alto - Medio - Bajo</p>
+            </div>
+            <div fxLayout="row">
+              <mat-form-field>
+                <textarea matInput placeholder="Competencia extra:" rows="3" formControlName="competenciaExtra"></textarea>
+              </mat-form-field>
+            </div>
+            <div fxLayout="row">
+              <p><b>Selecciona el tipo de nivel que requiere cada Técnica</b></p>
+            </div>
+            <div fxLayout="row" class="div-table" formArrayName="elementosB">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 70%;">TÉCNICAS</th>
+                    <th scope="col" style="width: 30%;">NIVEL </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let lt of quarterFormGroup.get('elementosB').controls; let i = index" [formGroupName]="i">
+                    <td style="width: 70%;">{{ i+1 }} - {{ lt.value.name }}</td>
+                    <mat-radio-group formControlName="levelselected">
+                      <td style="width: 10%;">
+                        <mat-radio-button value="Alto">{{lt.value.levelhigh}}</mat-radio-button>
+                      </td>
+                      <td style="width: 10%;">
+                        <mat-radio-button value="Medio">{{lt.value.levelmedium}}</mat-radio-button>
+                      </td>
+                      <td style="width: 10%;">
+                        <mat-radio-button value="Bajo">{{lt.value.levellow}}</mat-radio-button>
+                      </td>
+                    </mat-radio-group>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div fxLayout="row">
+              <p><b>¿Desea agregar alguna técnica que considera importante y no fue nombrada?</b><br>
+                Ingrese el nombre de la técnica y si su nivel es Alto - Medio - Bajo</p>
+            </div>
+            <div fxLayout="row">
+              <mat-form-field>
+                <textarea matInput placeholder="Técnica extra:" rows="3" formControlName="tecnicaExtra"></textarea>
+              </mat-form-field>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious>Atrás</button>
+              <button mat-button matStepperNext >Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="fifthFormGroup">
+          <form [formGroup]="fifthFormGroup">
+            <ng-template matStepLabel>Información adicional</ng-template>
+            <div fxLayout="row">
+              <p><b>Acaba de concretar el perfil y puesto laboral.</b><br>
+                Ikegraf le brinda la posibilidad de elegir la modalidad para la entrevista con los candidatos. Al
+                tener definido tanto el perfil como el puesto laboral inmediatamente reconoceremos cuales.
+                Serán los exámenes y pruebas a tomar según sus intereses y requisitos indicados.<br>
+                Por lo tanto tendrá la opción de realizar las entrevistas con las consignas previamente
+                indicadas sin el profesional presente o solicitar que sea el técnico quien se encargue de la
+                reunión.<br>
+                En cualquiera de los casos nos comunicaremos inmediatamente al teléfono indicado para la
+                organización de la entrevista. Al finalizar la misma, el profesional tendrá a su disposición los
+                exámenes solicitados para luego entregar en el tiempo acordado, los resultados del análisis
+                con los tres candidatos que se asemejan al puesto vacante.</p>
+            </div>
+            <div fxLayout="row">
+              <mat-radio-group formControlName="profesionalPresente">
+                <mat-radio-button value="SIN profesional presente">SIN profesional presente</mat-radio-button><br>
+                <mat-radio-button value="CON profesional presente">CON profesional presente</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious>Atrás</button>
+              <button mat-button matStepperNext >Siguiente</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="sixthFormGroup">
+          <form [formGroup]="sixthFormGroup">
+          <ng-template matStepLabel>Confirmar envío</ng-template>
+          Haz finalizado!
+          <div fxLayout="row">
             <mat-form-field>
-              <input matInput placeholder="Puesto de Trabajo " formControlName="puestoDeTrabajo">
+              <textarea matInput placeholder="Observaciones:" rows="5" formControlName="observaciones"></textarea>
             </mat-form-field>
           </div>
-          <div class="col-md-4">
-            <mat-form-field>
-              <mat-select placeholder="Sexo" formControlName="sexo">
-                <mat-option *ngFor="let s of sexo" [value]="s.value">
-                  {{s.value}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Atrás</button>
+            <button mat-button (click)="stepper.reset()">Resetear</button>
+            <button mat-raised-button color="primary" (click)="sendform()">Enviar</button>
           </div>
-          <div class="col-md-4">
-            <mat-form-field>
-              <input type="date" matInput placeholder="Fecha de nacimiento" formControlName="fechaNacimiento">
-            </mat-form-field>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <mat-form-field>
-              <input matInput type="number" placeholder="Teléfono" formControlName="telefono">
-            </mat-form-field>
-          </div>
-          <div class="col-md-4">
-            <mat-form-field>
-              <input matInput placeholder="Domicilio" formControlName="domicilio">
-            </mat-form-field>
-          </div>
-          <div class="col-md-4">
-            <mat-form-field>
-              <input matInput type="email" placeholder="Correo electrónico" formControlName="mail">
-            </mat-form-field>
-          </div>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <input matInput placeholder="Localidad" formControlName="localidad">
-          </mat-form-field>
-        </div>
-
-        <div>
-          <button mat-button matStepperNext (click)="verificar()">Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-      <ng-template matStepLabel>Selección del Perfil Laboral</ng-template>
-      <!--Responsive Form step 2-->
-      <form [formGroup]="checkBoxGroupResponsive" fxHide fxShow.sm fxShow.xs>
-        <div fxLayout="row">
-          <mat-card id="card1">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Perfil psicológico del directivo</mat-card-title>
-            </mat-card-header>
-            <mat-divider></mat-divider>
-            <mat-card-content>
-              <ul>
-                <li>Objetividad y sentido de la justica</li>
-                <li>Dotes de mando y Dinamismo</li>
-                <li>Visión del futuro y capacidad de planificación.</li>
-                <li>Capacidad de comunicación, diplomacia y empatía</li>
-              </ul>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <mat-checkbox formControlName="checkBox1responsive" (change)="seleccionadoResponsive('card1')">
-                Seleccionar</mat-checkbox>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div fxLayout="row">
-          <mat-card id="card2">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Perfil psicológico del comercial</mat-card-title>
-            </mat-card-header>
-            <mat-divider></mat-divider>
-            <mat-card-content>
-              <ul>
-                <li>Dotes de comunicación: facilidad de palabra, capacidad para convencer, llegar al otro y
-                  venderse como imagen de lo que representa</li>
-                <li>Dinamismo, actividad</li>
-                <li>Adaptabilidad, Sociabilidad</li>
-                <li>Iniciativa: visión y proyección del futuro, creatividad para aportar idea nuevas</li>
-                <li>Ambición moderada: ganas de auto superarse, espíritu competitivo</li>
-                <li>Vitalidad: persona saludable, capaz de exponerse a constantes cambios.</li>
-              </ul>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <mat-checkbox formControlName="checkBox2responsive" (change)="seleccionadoResponsive('card2')">
-                Seleccionar</mat-checkbox>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div fxLayout="row">
-          <mat-card id="card3">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Perfil Psicológico del administrativo</mat-card-title>
-            </mat-card-header>
-            <mat-divider></mat-divider>
-            <mat-card-content>
-              <ul>
-                <li>Capacidad de orden y organización</li>
-                <li>Constancia y regularidad en el trabajo</li>
-                <li>Agilidad mental</li>
-                <li>Visión del futuro, planificación</li>
-                <li>Capacidad de análisis</li>
-                <li>Facilidad de relación y negociación</li>
-              </ul>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <mat-checkbox formControlName="checkBox3responsive" (change)="seleccionadoResponsive('card3')">
-                Seleccionar</mat-checkbox>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div fxLayout="row">
-          <mat-card id="card4">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Perfil psicológico del creativo</mat-card-title>
-            </mat-card-header>
-            <mat-divider></mat-divider>
-            <mat-card-content>
-              <ul>
-                <li>No admite rutinas, exige libertad para dejar volar su imaginación e inspiración</li>
-                <li>Iniciativa y decisión</li>
-                <li>Dotes de observación</li>
-                <li>Agilidad mental</li>
-                <li>Apertura de criterios</li>
-              </ul>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <mat-checkbox formControlName="checkBox4responsive" (change)="seleccionadoResponsive('card4')">
-                Seleccionar</mat-checkbox>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div fxLayout="row">
-          <mat-card id="card5">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Perfil psicológico del técnico</mat-card-title>
-            </mat-card-header>
-            <mat-divider></mat-divider>
-            <mat-card-content>
-              <ul>
-                <li>Capacidad de planificación: Cumplimiento de plazos</li>
-                <li>Dotes de observación: Capacidad para ver el detalle</li>
-                <li>Creatividad: Imaginación para aportar nuevas ideas</li>
-                <li>Constancia: Perseverancia para la realización de la tarea</li>
-                <li>Precisión: Perfeccionismo</li>
-                <li>Iniciativa y decisión: Facilidad para encontrar soluciones, improvisación</li>
-              </ul>
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <mat-checkbox formControlName="checkBox5responsive" (change)="seleccionadoResponsive('card5')">
-                Seleccionar</mat-checkbox>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div fxLayout="row">
-          <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
-      <!--End Responsive Form step 2-->
-    </mat-step>
-    <mat-step [stepControl]="thirdFormGroup">
-      <form [formGroup]="thirdFormGroup">
-        <ng-template matStepLabel>Requisitos del puesto</ng-template>
-        <div fxLayout="row">
-          <mat-form-field>
-            <mat-select placeholder="Puesto" formControlName="puesto">
-              <mat-option *ngFor="let job of puestos" [value]="job">
-                {{job.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <textarea matInput placeholder="Objetivo General del puesto:" rows="3" formControlName="objetivoDelPuesto"></textarea>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <textarea matInput placeholder="Formación académica:" rows="3" formControlName="formacionAcademica"></textarea>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <textarea matInput placeholder="Experiencia laboral:" rows="3" formControlName="experienciaLaboral"></textarea>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <mat-select placeholder="Tipo del trabajo" formControlName="tipoDelTrabajo">
-              <mat-option *ngFor="let tipoTrabajo of tiposDeTrabajos" [value]="tipoTrabajo.value">
-                {{tipoTrabajo.value}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="quarterFormGroup">
-      <form [formGroup]="quarterFormGroup">
-        <ng-template matStepLabel>Competencias del postulante</ng-template>
-        <div formArrayName="elementosA" fxLayout="row" class="div-table">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" style="width: 70%;">COMPETENCIA</th>
-                <th scope="col" style="width: 30%;">NIVEL </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let lc of quarterFormGroup.get('elementosA').controls; let i = index" [formGroupName]="i">
-                <td style="width: 70%;">{{ i+1 }} - {{ lc.value.name }}</td>
-                <mat-radio-group formControlName="levelselected">
-                  <td style="width: 10%;">
-                    <mat-radio-button value="levelhigh">{{lc.value.levelhigh}}</mat-radio-button>
-                  </td>
-                  <td style="width: 10%;">
-                    <mat-radio-button value="levelmedium">{{lc.value.levelmedium}}</mat-radio-button>
-                  </td>
-                  <td style="width: 10%;">
-                    <mat-radio-button value="levellow">{{lc.value.levellow}}</mat-radio-button>
-                  </td>
-                </mat-radio-group>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div fxLayout="row">
-          <p><b>¿Desea agregar alguna competencia que considera importante y no fue nombrada?</b><br>
-            Ingrese el nombre de la competencia y si su nivel es Alto - Medio - Bajo</p>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <textarea matInput placeholder="Competencia extra:" rows="3" formControlName="competenciaExtra"></textarea>
-          </mat-form-field>
-        </div>
-        <div fxLayout="row">
-          <p><b>Selecciona el tipo de nivel que requiere cada Técnica</b></p>
-        </div>
-        <div fxLayout="row" class="div-table" formArrayName="elementosB">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" style="width: 70%;">TÉCNICAS</th>
-                <th scope="col" style="width: 30%;">NIVEL </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let lt of quarterFormGroup.get('elementosB').controls; let i = index" [formGroupName]="i">
-                <td style="width: 70%;">{{ i+1 }} - {{ lt.value.name }}</td>
-                <mat-radio-group formControlName="levelselected">
-                  <td style="width: 10%;">
-                    <mat-radio-button value="levelhigh">{{lt.value.levelhigh}}</mat-radio-button>
-                  </td>
-                  <td style="width: 10%;">
-                    <mat-radio-button value="levelmedium">{{lt.value.levelmedium}}</mat-radio-button>
-                  </td>
-                  <td style="width: 10%;">
-                    <mat-radio-button value="levellow">{{lt.value.levellow}}</mat-radio-button>
-                  </td>
-                </mat-radio-group>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div fxLayout="row">
-          <p><b>¿Desea agregar alguna técnica que considera importante y no fue nombrada?</b><br>
-            Ingrese el nombre de la técnica y si su nivel es Alto - Medio - Bajo</p>
-        </div>
-        <div fxLayout="row">
-          <mat-form-field>
-            <textarea matInput placeholder="Técnica extra:" rows="3" formControlName="tecnicaExtra"></textarea>
-          </mat-form-field>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext (click)="verificar()">Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="fifthFormGroup">
-      <form [formGroup]="fifthFormGroup">
-        <ng-template matStepLabel>Información adicional</ng-template>
-        <div fxLayout="row">
-          <p><b>Acaba de concretar el perfil y puesto laboral.</b><br>
-            Ikegraf le brinda la posibilidad de elegir la modalidad para la entrevista con los candidatos. Al
-            tener definido tanto el perfil como el puesto laboral inmediatamente reconoceremos cuales.
-            Serán los exámenes y pruebas a tomar según sus intereses y requisitos indicados.<br>
-            Por lo tanto tendrá la opción de realizar las entrevistas con las consignas previamente
-            indicadas sin el profesional presente o solicitar que sea el técnico quien se encargue de la
-            reunión.<br>
-            En cualquiera de los casos nos comunicaremos inmediatamente al teléfono indicado para la
-            organización de la entrevista. Al finalizar la misma, el profesional tendrá a su disposición los
-            exámenes solicitados para luego entregar en el tiempo acordado, los resultados del análisis
-            con los tres candidatos que se asemejan al puesto vacante.</p>
-        </div>
-        <div fxLayout="row">
-          <mat-radio-group formControlName="profesionalPresente">
-            <mat-radio-button value="SIN profesional presente">SIN profesional presente</mat-radio-button><br>
-            <mat-radio-button value="CON profesional presente">CON profesional presente</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="sixthFormGroup">
-      <ng-template matStepLabel>Confirmar envío</ng-template>
-      Haz finalizado!
-      <div fxLayout="row">
-        <mat-form-field>
-          <textarea matInput placeholder="Observaciones:" rows="5"></textarea>
-        </mat-form-field>
-      </div>
-      <div>
-        <button mat-button matStepperPrevious>Atrás</button>
-        <button mat-button (click)="stepper.reset()">Resetear</button>
-        <button mat-raised-button color="primary" (click)="sendform()">Enviar</button>
-      </div>
-    </mat-step>
+          
+          </form>
+          
+        </mat-step>
   </mat-vertical-stepper>
+  
+</div >
+<!--end Page "seleccion" personal Responsive-->
+<div id="respuesta" class="container tracking-out-expand">
 
 </div>
-<!--end Page "seleccion" personal Responsive-->

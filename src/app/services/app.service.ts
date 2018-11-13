@@ -17,5 +17,11 @@ export class AppService {
   public listarPuestos() {
     return this.db.list('/Puesto');
   }
-
+  // el siguiente metodo es para consultar el valor del id de la ultima fila para usarlo como id +1 en el proximo registro 
+  public listarId() { 
+    return this.db.list('/Formulario');
+  }
+  public addForm(formulario, id){
+    return this.db.object('/Formulario/'+ id).set(formulario);
+  }
 }
