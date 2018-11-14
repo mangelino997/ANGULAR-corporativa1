@@ -131,9 +131,9 @@ export class SeleccionPersonalComponent implements OnInit {
     this.sixthFormGroup.reset();
     }
     else {
-      var el = document.getElementById('respuesta');
-      el.innerHTML = '<div class=\'alert alert-danger\' role=\'alert\'>Hubo un error! Debe completar todos los campos </div>';
-      
+      // var el = document.getElementById('respuesta');
+      // el.innerHTML = '<div class=\'alert alert-danger\' role=\'alert\'>Hubo un error! Debe completar todos los campos </div>';
+      alert("Hubo un error! Debe completar todos los campos");
     }
   }
 
